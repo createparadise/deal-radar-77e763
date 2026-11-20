@@ -1,0 +1,1403 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Deal Radar · Pennsylvania</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="description" content="Кому звонить первым и сколько предлагать. Радар мотивированных продавцов для wholesale в Пенсильвании: импорт CSV, балл 0–100, MAO, воронка, скрипты. Демо.">
+<meta name="theme-color" content="#05070b">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Deal Radar · Pennsylvania">
+<meta property="og:description" content="Кому звонить первым и сколько предлагать. Радар мотивированных продавцов · демо">
+<meta property="og:image" content="https://createparadise.github.io/deal-radar-77e763/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2305070b'/%3E%3Ccircle cx='32' cy='32' r='20' fill='none' stroke='%232fe3c6' stroke-opacity='.5' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='10' fill='none' stroke='%232fe3c6' stroke-opacity='.35' stroke-width='3'/%3E%3Cpath d='M32 32 L50 20' stroke='%23ff8a2a' stroke-width='4' stroke-linecap='round'/%3E%3Ccircle cx='42' cy='26' r='4.5' fill='%23ff5a1f'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#05070b;--bg2:#0a0e15;--panel:rgba(15,20,30,.74);--panel2:rgba(21,28,41,.9);
+  --line:rgba(255,255,255,.075);--line2:rgba(255,255,255,.14);
+  --ink:#eef2f8;--ink2:#c3ccd9;--muted:#8a96a8;--dim:#5f6a7b;
+  --lava:#ff5a1f;--orange:#ff8a2a;--amber:#ffb547;--teal:#2fe3c6;--blue:#7c95ff;--violet:#b48cff;--cold:#64748b;--ok:#3ddc97;--bad:#ff6b6b;
+  --hot:linear-gradient(135deg,#ff4d1a 0%,#ff8a2a 55%,#ffc061 100%);
+  --spring:cubic-bezier(.16,1,.3,1);
+  --sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Inter","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%;color-scheme:dark;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 var(--sans);-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:hidden}
+body.lock{overflow:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:
+  radial-gradient(900px 520px at 88% -140px,rgba(255,90,31,.17),transparent 62%),
+  radial-gradient(760px 480px at -12% 6%,rgba(47,227,198,.085),transparent 60%),
+  radial-gradient(1200px 700px at 50% 125%,rgba(124,149,255,.07),transparent 60%)}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.55;
+  background-image:linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);
+  background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000 25%,transparent 75%);mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000 25%,transparent 75%)}
+a{color:var(--teal);text-decoration:none}
+a:hover{text-decoration:underline}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--teal);outline-offset:2px;border-radius:8px}
+.wrap{width:100%;max-width:1320px;margin:0 auto;padding:0 28px;position:relative;z-index:1}
+main{position:relative;z-index:1}
+.eyebrow{font:600 11.5px/1.3 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin:0 0 14px}
+.grad{background:var(--hot);-webkit-background-clip:text;background-clip:text;color:transparent}
+.glass{background:var(--panel);border:1px solid var(--line);border-radius:20px;-webkit-backdrop-filter:blur(18px) saturate(140%);backdrop-filter:blur(18px) saturate(140%);box-shadow:0 1px 0 rgba(255,255,255,.04) inset,0 30px 60px -40px rgba(0,0,0,.8)}
+.spot{position:relative;isolation:isolate}
+.spot::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:-1;opacity:0;transition:opacity .4s var(--spring);background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(47,227,198,.075),transparent 45%)}
+.spot:hover::before{opacity:1}
+
+/* top bar */
+.top{position:sticky;top:0;z-index:30;background:rgba(5,7,11,.72);-webkit-backdrop-filter:blur(16px) saturate(150%);backdrop-filter:blur(16px) saturate(150%);border-bottom:1px solid var(--line)}
+.top__in{display:flex;align-items:center;gap:22px;height:64px}
+.brand{display:flex;align-items:center;gap:11px;color:var(--ink);text-decoration:none!important;flex:none}
+.brand__mark{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:radial-gradient(circle at 30% 25%,rgba(47,227,198,.22),rgba(255,255,255,.02));border:1px solid var(--line2)}
+.brand__name{font-weight:700;font-size:16.5px;letter-spacing:-.01em;white-space:nowrap}
+.brand__name em{font-style:normal;color:var(--muted);font-weight:600}
+.tabs{display:flex;gap:4px;padding:4px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.025);margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{border:0;background:transparent;padding:8px 15px;border-radius:999px;color:var(--muted);font-weight:600;font-size:13.5px;white-space:nowrap;transition:color .3s,background .4s var(--spring)}
+.tabs button[aria-selected="true"]{background:rgba(255,255,255,.09);color:var(--ink);box-shadow:0 1px 0 rgba(255,255,255,.08) inset}
+.tabs button:hover{color:var(--ink)}
+.top__right{display:flex;align-items:center;gap:10px;flex:none}
+.pill{display:inline-flex;align-items:center;gap:7px;font:600 11.5px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:8px 11px;border-radius:999px;border:1px solid var(--line2);color:var(--ink2);white-space:nowrap}
+.pill--demo::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--amber);box-shadow:0 0 10px var(--amber)}
+.pill--csv::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 10px var(--teal)}
+.iconbtn{width:36px;height:36px;border-radius:11px;border:1px solid var(--line2);background:rgba(255,255,255,.03);display:grid;place-items:center;color:var(--ink2)}
+.iconbtn[aria-pressed="false"]{color:var(--dim)}
+.iconbtn[aria-pressed="false"] .wave{display:none}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:40px;align-items:center;padding-top:54px;padding-bottom:30px}
+h1{font-size:clamp(34px,5.1vw,66px);line-height:1.02;letter-spacing:-.035em;margin:0 0 20px;font-weight:750;text-wrap:balance}
+h2{font-size:clamp(26px,3.3vw,40px);line-height:1.08;letter-spacing:-.028em;margin:0 0 14px;font-weight:720;text-wrap:balance}
+h3{font-size:17px;line-height:1.3;margin:0 0 8px;font-weight:680;letter-spacing:-.01em}
+.lead{font-size:clamp(16px,1.45vw,18.5px);line-height:1.6;color:var(--ink2);max-width:40em;margin:0}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:30px}
+.kpi{padding:16px 16px 14px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.025)}
+.kpi b{display:block;font:700 clamp(24px,2.4vw,32px)/1.05 var(--sans);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.kpi span{display:block;margin-top:6px;font-size:12.5px;color:var(--muted)}
+.kpi--hot{border-color:rgba(255,106,42,.35);background:linear-gradient(160deg,rgba(255,90,31,.14),rgba(255,181,71,.03))}
+.kpi--hot b{background:var(--hot);-webkit-background-clip:text;background-clip:text;color:transparent}
+.radar{position:relative;width:100%;max-width:440px;aspect-ratio:1;justify-self:center;overflow-x:clip}
+.radar svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.radar__sweep{position:absolute;inset:3.2%;border-radius:50%;pointer-events:none;background:conic-gradient(from 0deg,transparent 0deg,transparent 292deg,rgba(47,227,198,.05) 320deg,rgba(47,227,198,.32) 359deg,transparent 360deg);animation:spin 5.2s linear infinite;-webkit-mask-image:radial-gradient(circle,#000 62%,transparent 71%);mask-image:radial-gradient(circle,#000 62%,transparent 71%)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.radar .ring{fill:none;stroke:rgba(255,255,255,.07)}
+.radar .ring--outer{stroke:rgba(47,227,198,.28);stroke-width:1.2}
+.radar .ring--hot{stroke:rgba(255,106,42,.4);stroke-dasharray:3 5}
+.radar .ring--warm{stroke:rgba(255,181,71,.25);stroke-dasharray:2 6}
+.radar .axis{stroke:rgba(255,255,255,.05)}
+.radar .rlab{font:600 9px var(--mono);fill:var(--dim);letter-spacing:.06em}
+.radar .core{fill:rgba(255,90,31,.12);stroke:rgba(255,138,42,.5)}
+.blip{cursor:pointer;outline:none}
+.blip circle.b{transition:transform .5s var(--spring);transform-box:fill-box;transform-origin:center}
+.blip:hover circle.b,.blip:focus circle.b{transform:scale(1.9)}
+.blip--hot circle.b{fill:#ff6a2a}
+.blip--warm circle.b{fill:var(--amber)}
+.blip--cold circle.b{fill:#7d8ea6}
+.blip circle.p{fill:none;stroke:#ff6a2a;stroke-width:1.2;transform-box:fill-box;transform-origin:center;animation:ping 2.6s var(--spring) infinite}
+@keyframes ping{0%{transform:scale(1);opacity:.9}100%{transform:scale(4.2);opacity:0}}
+.radar__legend{position:absolute;left:0;right:0;bottom:-6px;display:flex;justify-content:center;gap:16px;font:600 11px var(--mono);color:var(--muted)}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:1px}
+.dot--hot{background:#ff6a2a;box-shadow:0 0 8px #ff6a2a}.dot--warm{background:var(--amber)}.dot--cold{background:#7d8ea6}
+
+/* demo note + toolbar */
+.demo-note{display:flex;align-items:center;gap:10px;margin:10px 0 14px;padding:11px 14px;border-radius:14px;border:1px dashed rgba(255,181,71,.38);background:rgba(255,181,71,.06);color:#ffd9a0;font-size:13.5px}
+.demo-note::before{content:"ДЕМО";flex:none;font:700 10.5px/1 var(--mono);letter-spacing:.12em;padding:5px 7px;border-radius:6px;background:rgba(255,181,71,.16);color:var(--amber)}
+.toolbar{padding:14px;display:grid;grid-template-columns:minmax(0,1fr);gap:12px;margin-bottom:14px}
+.toolbar__row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.search{flex:1 1 260px;display:flex;align-items:center;gap:9px;padding:0 13px;height:42px;border-radius:12px;border:1px solid var(--line2);background:rgba(0,0,0,.25)}
+.search input{flex:1;border:0;background:transparent;outline:none;min-width:0;height:100%}
+.search input::placeholder{color:var(--dim)}
+select{height:42px;border-radius:12px;border:1px solid var(--line2);background:rgba(0,0,0,.25);padding:0 34px 0 12px;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%238a96a8' stroke-width='1.6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+select option{background:#0c111a;color:var(--ink)}
+.seg{display:inline-flex;padding:3px;border-radius:12px;border:1px solid var(--line2);background:rgba(0,0,0,.25)}
+.seg button{border:0;background:transparent;height:34px;padding:0 14px;border-radius:9px;color:var(--muted);font-weight:600;font-size:13.5px;transition:background .4s var(--spring),color .3s}
+.seg button[aria-selected="true"]{background:rgba(255,255,255,.1);color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{border:1px solid var(--line2);background:rgba(255,255,255,.02);color:var(--ink2);height:32px;padding:0 12px;border-radius:999px;font-size:12.5px;font-weight:600;transition:all .35s var(--spring);white-space:nowrap}
+.chip:hover{border-color:rgba(255,255,255,.28)}
+.chip[aria-pressed="true"]{background:rgba(47,227,198,.12);border-color:rgba(47,227,198,.5);color:#bff8ee}
+.chip--hot[aria-pressed="true"]{background:rgba(255,90,31,.14);border-color:rgba(255,120,60,.6);color:#ffd2bb}
+.chips--sep{padding-left:10px;border-left:1px solid var(--line)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:0 16px;border-radius:12px;border:1px solid var(--line2);background:rgba(255,255,255,.04);color:var(--ink);font-weight:650;font-size:13.5px;white-space:nowrap;transition:transform .4s var(--spring),background .3s,border-color .3s;cursor:pointer}
+.btn:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.24)}
+.btn:active{transform:scale(.97)}
+.btn--hot{border:0;background:var(--hot);color:#1a0a02;box-shadow:0 10px 30px -12px rgba(255,90,31,.8)}
+.btn--hot:hover{background:var(--hot);filter:brightness(1.06)}
+.btn--ghost{background:transparent}
+.btn--sm{height:32px;padding:0 11px;font-size:12.5px;border-radius:10px}
+.count{margin-left:auto;font:600 12px var(--mono);color:var(--muted)}
+.mapping{padding:14px 16px;margin-bottom:14px;font-size:13.5px;color:var(--ink2)}
+.mapping b{color:var(--ink)}
+.mapping .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.mapping .t{font:600 11.5px var(--mono);padding:5px 8px;border-radius:7px;background:rgba(47,227,198,.1);color:#aef3e6}
+.mapping .t--miss{background:rgba(255,255,255,.05);color:var(--dim)}
+.mapping__x{float:right;border:0;background:transparent;color:var(--muted);font-size:18px;line-height:1}
+
+/* list */
+.thead,.lead-row{display:grid;grid-template-columns:62px minmax(0,1.45fr) minmax(0,1fr) minmax(0,1.75fr) 150px 124px;gap:16px;align-items:center}
+.thead{padding:0 18px 8px;font:600 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.list{display:grid;gap:8px;padding-bottom:30px}
+.lead-row{width:100%;text-align:left;padding:13px 18px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.022);transition:transform .5s var(--spring),border-color .3s,background .3s;cursor:pointer}
+.lead-row:hover{border-color:rgba(255,255,255,.17);background:rgba(255,255,255,.04);transform:translateY(-1px)}
+.lead-row.is-hot{border-color:rgba(255,106,42,.22)}
+.c-ad b{display:block;font-size:15px;font-weight:650;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.c-ad span,.c-ow span{display:block;font-size:12.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.c-ow b{display:block;font-size:13.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.c-sg{display:flex;flex-wrap:wrap;gap:5px}
+.sig{font:600 11px/1 var(--mono);padding:6px 8px;border-radius:7px;background:rgba(255,255,255,.05);color:var(--ink2);white-space:nowrap}
+.sig--tax{background:rgba(255,90,31,.13);color:#ffb08a}
+.sig--vacant{background:rgba(180,140,255,.13);color:#d9c5ff}
+.sig--absentee{background:rgba(124,149,255,.13);color:#c4d0ff}
+.sig--equity{background:rgba(61,220,151,.12);color:#a6f0cf}
+.sig--years{background:rgba(255,255,255,.06);color:var(--ink2)}
+.sig--probate{background:rgba(255,181,71,.14);color:#ffd79a}
+.c-mo{text-align:right}
+.c-mo span{display:block;font:600 11.5px var(--mono);color:var(--dim)}
+.c-mo b{display:block;font:700 16px var(--sans);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.c-mo b.neg{color:var(--bad)}
+.c-mo i{font-style:normal;font:600 10.5px var(--mono);color:var(--ok)}
+.c-mo i.no{color:var(--dim)}
+.stage{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;color:var(--ink2);white-space:nowrap}
+.stage::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--sc,#7d8ea6);box-shadow:0 0 10px var(--sc,transparent)}
+.st-new{--sc:#7d8ea6}.st-contacted{--sc:var(--blue)}.st-offer{--sc:var(--amber)}.st-contract{--sc:var(--teal)}.st-buyer{--sc:var(--violet)}.st-closed{--sc:var(--ok)}.st-dead{--sc:#3c4452}
+.c-ow .st-mini{display:none}
+.bn-short{display:none}
+.more{padding:14px;text-align:center;color:var(--muted);font-size:13px}
+.empty{padding:40px 18px;text-align:center;color:var(--muted);border:1px dashed var(--line2);border-radius:18px}
+
+/* score ring */
+.ring-s{position:relative;display:grid;place-items:center}
+.ring-s svg{display:block;transform:rotate(-90deg)}
+.ring-s b{position:absolute;font:750 15px/1 var(--sans);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.ring-s.big b{font-size:24px}
+.card .ring-s b{font-size:12.5px}
+.ring-s .bg{fill:none;stroke:rgba(255,255,255,.08)}
+.ring-s .fg{fill:none;stroke-linecap:round;transition:stroke-dashoffset 1s var(--spring)}
+
+/* board */
+.board{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(258px,1fr);gap:12px;overflow-x:auto;padding-bottom:26px;scroll-snap-type:x proximity}
+.col{scroll-snap-align:start;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.018);display:flex;flex-direction:column;min-height:300px;transition:border-color .3s,background .3s}
+.col.is-over{border-color:rgba(47,227,198,.55);background:rgba(47,227,198,.05)}
+.col header{display:flex;align-items:baseline;gap:8px;padding:14px 14px 10px;border-bottom:1px solid var(--line)}
+.col header b{font-size:14px}
+.col header span{font:600 10.5px var(--mono);color:var(--dim);text-transform:uppercase;letter-spacing:.08em}
+.col header em{margin-left:auto;font:700 12px var(--mono);font-style:normal;color:var(--ink2);padding:3px 8px;border-radius:999px;background:rgba(255,255,255,.06)}
+.col__body{display:grid;gap:8px;padding:10px;align-content:start;flex:1}
+.col footer{padding:10px 14px;border-top:1px solid var(--line);font:600 11.5px var(--mono);color:var(--muted)}
+.col footer b{color:var(--ink)}
+.card{border:1px solid var(--line);border-radius:14px;background:var(--panel2);padding:11px;cursor:grab;transition:transform .45s var(--spring),border-color .3s,opacity .3s}
+.card:hover{border-color:rgba(255,255,255,.2);transform:translateY(-2px)}
+.card.is-drag{opacity:.4}
+.card__top{display:flex;gap:10px;align-items:center}
+.card__top>div>b{display:block;font-size:13.5px;font-weight:650;line-height:1.25}
+.card__top>div>span{display:block;font-size:11.5px;color:var(--muted)}
+.card__chips{display:flex;flex-wrap:wrap;gap:4px;margin:9px 0}
+.card__foot{display:flex;align-items:center;justify-content:space-between;font-size:12px;color:var(--muted)}
+.card__foot b{color:var(--ink);font-variant-numeric:tabular-nums}
+.mv{display:flex;gap:4px}
+.mv button{width:28px;height:28px;border-radius:8px;border:1px solid var(--line2);background:rgba(255,255,255,.03);color:var(--ink2);font-size:15px;line-height:1}
+.mv button:disabled{opacity:.25;cursor:default}
+
+/* drawer */
+.backdrop{position:fixed;inset:0;z-index:40;background:rgba(2,3,6,.55);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);opacity:0;transition:opacity .4s}
+.backdrop.is-open{opacity:1}
+.drawer{position:fixed;top:0;right:0;bottom:0;z-index:50;width:min(600px,100vw);background:linear-gradient(180deg,#0b1018,#080b11);border-left:1px solid var(--line2);box-shadow:-40px 0 80px -40px rgba(0,0,0,.9);transform:translateX(104%);transition:transform .6s var(--spring);display:flex;flex-direction:column}
+.drawer.is-open{transform:none}
+.d-head{display:flex;gap:16px;align-items:center;padding:20px 22px;border-bottom:1px solid var(--line);background:rgba(8,11,17,.9);position:sticky;top:0;z-index:2}
+.d-head h2{font-size:21px;margin:0 0 4px;letter-spacing:-.02em}
+.d-head p{margin:0;color:var(--muted);font-size:13px}
+.d-x{margin-left:auto;align-self:flex-start;width:38px;height:38px;flex:none;border-radius:11px;border:1px solid var(--line2);background:rgba(255,255,255,.04);font-size:20px;line-height:1;color:var(--ink2)}
+.d-body{overflow-y:auto;padding:4px 22px 40px;flex:1;overscroll-behavior:contain}
+.d-sec{padding:20px 0;border-bottom:1px solid var(--line)}
+.d-sec:last-child{border-bottom:0}
+.d-sec>h3{display:flex;align-items:center;gap:10px}
+.d-sec>h3 small{font:600 10.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--dim);font-weight:600}
+.tier{font:700 10.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;padding:6px 8px;border-radius:7px}
+.tier--hot{background:rgba(255,90,31,.16);color:#ffb08a}.tier--warm{background:rgba(255,181,71,.15);color:#ffd79a}.tier--cold{background:rgba(125,142,166,.16);color:#c6d0dd}
+.why{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:8px}
+.why li{display:grid;grid-template-columns:52px 1fr;gap:12px;padding:11px 12px;border-radius:12px;background:rgba(255,255,255,.03);border:1px solid var(--line)}
+.why .pts{font:750 15px/1.2 var(--mono);color:var(--orange)}
+.why b{display:block;font-size:13.5px}
+.why span{display:block;font-size:13px;color:var(--ink2);margin-top:2px}
+.why-none{color:var(--muted);font-size:13.5px}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:10px}
+.facts div{padding:10px 11px;border-radius:11px;background:rgba(255,255,255,.03);border:1px solid var(--line)}
+.facts span{display:block;font:600 10.5px var(--mono);color:var(--dim);text-transform:uppercase;letter-spacing:.06em}
+.facts b{display:block;font-size:13.5px;margin-top:3px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.calc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}
+.field{display:grid;gap:6px;font-size:12.5px;color:var(--muted);font-weight:600}
+.field input,.field textarea{width:100%;min-width:0;height:42px;border-radius:11px;border:1px solid var(--line2);background:rgba(0,0,0,.3);padding:0 12px;color:var(--ink);font-variant-numeric:tabular-nums;outline:none;transition:border-color .3s}
+.field textarea{height:auto;min-height:78px;padding:10px 12px;resize:vertical;line-height:1.5}
+.field input:focus,.field textarea:focus{border-color:rgba(47,227,198,.6)}
+.field output{color:var(--ink);font-weight:700}
+input[type=range]{-webkit-appearance:none;appearance:none;height:42px;background:transparent;padding:0;border:0}
+input[type=range]::-webkit-slider-runnable-track{height:6px;border-radius:6px;background:linear-gradient(90deg,var(--teal) var(--fill,50%),rgba(255,255,255,.1) var(--fill,50%))}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:#fff;margin-top:-7px;box-shadow:0 2px 10px rgba(0,0,0,.5)}
+input[type=range]::-moz-range-track{height:6px;border-radius:6px;background:rgba(255,255,255,.1)}
+input[type=range]::-moz-range-progress{height:6px;border-radius:6px;background:var(--teal)}
+input[type=range]::-moz-range-thumb{width:20px;height:20px;border:0;border-radius:50%;background:#fff}
+.mao{margin-top:14px;padding:16px;border-radius:16px;border:1px solid rgba(47,227,198,.28);background:linear-gradient(160deg,rgba(47,227,198,.09),rgba(47,227,198,.01))}
+.mao__top{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.mao__top span{display:block;font:600 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#9be9da}
+.mao__top b{display:block;font:760 38px/1 var(--sans);letter-spacing:-.04em;margin-top:6px;font-variant-numeric:tabular-nums}
+.mao__top b.neg{color:var(--bad)}
+.mao__f{font:600 12px var(--mono);color:var(--ink2);margin:10px 0 12px;overflow-wrap:anywhere}
+.stack{display:flex;height:12px;border-radius:7px;overflow:hidden;background:rgba(255,255,255,.06)}
+.stack i{display:block;height:100%;transition:width .8s var(--spring)}
+.stack .s-mao{background:var(--teal)}.stack .s-fee{background:var(--lava)}.stack .s-rep{background:var(--amber)}.stack .s-mar{background:var(--blue)}
+.stack-lg{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px;font-size:11.5px;color:var(--muted)}
+.stack-lg span::before{content:"";display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:6px;background:var(--c)}
+.mao__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.mao__grid div{padding:9px 10px;border-radius:10px;background:rgba(0,0,0,.22)}
+.mao__grid span{display:block;font-size:11.5px;color:var(--muted)}
+.mao__grid b{display:block;font-size:15px;margin-top:2px;font-variant-numeric:tabular-nums}
+.hint{font-size:12.5px;color:var(--muted);margin:10px 0 0;line-height:1.55}
+.hint b{color:var(--ink2)}
+.ok{color:var(--ok)}.bad{color:var(--bad)}
+.row2{display:grid;grid-template-columns:200px 1fr;gap:10px;margin-top:12px;align-items:start}
+.row2 select{width:100%}
+.stabs{display:flex;gap:6px;margin:12px 0 10px}
+.out{width:100%;min-height:210px;border-radius:13px;border:1px solid var(--line2);background:rgba(0,0,0,.35);padding:13px 14px;font:13px/1.6 var(--mono);color:#dfe7f2;white-space:pre-wrap;resize:vertical;outline:none}
+.out-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:8px;font:600 11.5px var(--mono);color:var(--dim)}
+.law{margin-top:12px;padding:13px 14px;border-radius:13px;border:1px solid rgba(255,181,71,.3);background:rgba(255,181,71,.06);font-size:12.5px;line-height:1.6;color:#f3dcb5}
+.law b{color:#ffd79a}
+.law ul{margin:6px 0 0;padding-left:18px}
+
+/* freight */
+.fr{padding-top:54px;padding-bottom:40px}
+.fr__grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:16px;margin-top:26px}
+.fr__form{padding:20px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-content:start}
+.fr__form .full{grid-column:1/-1}
+.fr__out{padding:22px}
+.fr__big span{display:block;font:600 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.fr__big b{display:inline-block;font:770 clamp(42px,5vw,60px)/1 var(--sans);letter-spacing:-.045em;margin-top:8px;background:var(--hot);-webkit-background-clip:text;background-clip:text;color:transparent;font-variant-numeric:tabular-nums}
+.fr__big b.neg{background:none;color:var(--bad)}
+.fr__big em{font-style:normal;font:700 18px var(--mono);color:var(--ink2);margin-left:12px}
+.split{display:flex;height:14px;border-radius:8px;overflow:hidden;margin:18px 0 8px;background:rgba(255,255,255,.06)}
+.split i{display:block;height:100%;transition:width .8s var(--spring)}
+.split .c{background:linear-gradient(90deg,#3a4a62,#56698a)}.split .m{background:var(--hot)}
+.split-lg{display:flex;justify-content:space-between;font-size:12px;color:var(--muted)}
+.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:18px}
+.tiles div{padding:13px 14px;border-radius:13px;border:1px solid var(--line);background:rgba(255,255,255,.025)}
+.tiles span{display:block;font-size:12px;color:var(--muted)}
+.tiles b{display:block;font:700 21px var(--sans);letter-spacing:-.02em;margin-top:4px;font-variant-numeric:tabular-nums}
+.cap{margin:16px 0 0;padding:13px 14px;border-radius:13px;background:rgba(47,227,198,.08);border:1px solid rgba(47,227,198,.25);font-size:13.5px;color:#c8f6ee}
+.cap b{color:#fff}
+.lanes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:12px}
+.lane{text-align:left;padding:14px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.022);transition:border-color .3s,transform .45s var(--spring)}
+.lane:hover{border-color:rgba(255,255,255,.2);transform:translateY(-2px)}
+.lane.is-on{border-color:rgba(47,227,198,.55);background:rgba(47,227,198,.06)}
+.lane b{display:block;font-size:14px;line-height:1.3}
+.lane span{display:block;font-size:12px;color:var(--muted);margin-top:4px}
+.lane em{display:block;font-style:normal;font:600 12px var(--mono);color:var(--ink2);margin-top:9px}
+.note{font-size:13px;color:var(--muted);margin:18px 0 0;line-height:1.6}
+
+/* how */
+.how{padding-top:54px;padding-bottom:40px}
+.flow{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;counter-reset:f}
+.flow li{padding:20px;border-radius:18px;border:1px solid var(--line);background:rgba(255,255,255,.022);display:flex;flex-direction:column;gap:6px}
+.flow__n{font:700 12px var(--mono);color:var(--teal);letter-spacing:.1em}
+.flow p{margin:0;color:var(--ink2);font-size:14px;line-height:1.55;flex:1}
+.who{align-self:flex-start;margin-top:10px;font:700 10.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;padding:6px 8px;border-radius:7px}
+.who--sys{background:rgba(47,227,198,.12);color:#aef3e6}.who--you{background:rgba(255,90,31,.14);color:#ffb08a}.who--both{background:rgba(124,149,255,.14);color:#c4d0ff}
+.how__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px}
+.how__grid article{padding:20px}
+.how__grid ul{margin:6px 0 0;padding-left:18px;color:var(--ink2);font-size:14px;line-height:1.6}
+.how__grid li{margin:4px 0}
+.how__grid p{color:var(--ink2);font-size:14px;line-height:1.6;margin:0 0 6px}
+.src{font-size:12.5px!important;color:var(--muted)!important;margin-top:10px!important}
+.you{margin-top:14px;padding:18px 20px;display:flex;flex-wrap:wrap;gap:10px 26px;align-items:center}
+.you b{font-size:15px}
+.you span{color:var(--ink2);font-size:14px}
+
+.foot{padding:26px 28px 40px;color:var(--dim);font-size:12.5px;border-top:1px solid var(--line);margin-top:20px;display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
+.drop{position:fixed;inset:0;z-index:60;display:grid;place-items:center;background:rgba(5,7,11,.82);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.drop div{padding:34px 44px;border-radius:24px;border:2px dashed rgba(47,227,198,.6);font-size:20px;font-weight:700;color:#c8f6ee}
+.toast{position:fixed;left:50%;bottom:24px;z-index:70;transform:translate(-50%,30px);opacity:0;pointer-events:none;padding:12px 18px;border-radius:14px;background:#141b27;border:1px solid var(--line2);box-shadow:0 20px 40px -20px #000;font-size:14px;transition:all .5s var(--spring);max-width:calc(100vw - 32px)}
+.toast.is-on{transform:translate(-50%,0);opacity:1}
+
+@media (max-width:1100px){
+  .thead,.lead-row{grid-template-columns:56px minmax(0,1.5fr) minmax(0,1fr) minmax(0,1.4fr) 140px}
+  .c-st,.thead .h-st{display:none}
+  .c-ow .st-mini{display:inline-flex;margin-top:5px}
+  .lanes{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .flow,.how__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:860px){
+  .wrap{padding:0 16px}
+  .top{position:relative}
+  .top__in{height:auto;flex-wrap:wrap;gap:10px;padding-top:10px;padding-bottom:10px}
+  .brand__name{font-size:15px}
+  .tabs{order:3;width:100%;margin-left:0;justify-content:space-between}
+  .tabs button{flex:1;padding:8px 10px}
+  .top__right{margin-left:auto}
+  .hero{grid-template-columns:1fr;gap:18px;padding-top:30px}
+  .radar{max-width:300px;justify-self:center;margin-top:6px}
+  .kpis{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:22px}
+  .kpi{padding:13px}
+  .thead{display:none}
+  .lead-row{grid-template-columns:52px minmax(0,1fr) auto;grid-template-areas:"sc ad mo" "sc ow ow" "sg sg sg";gap:6px 12px;padding:13px 14px}
+  .c-sc{grid-area:sc;align-self:start}.c-ad{grid-area:ad}.c-ow{grid-area:ow}.c-sg{grid-area:sg;margin-top:4px}.c-mo{grid-area:mo;align-self:start}
+  .c-ow{display:flex;gap:10px;align-items:center;min-width:0}
+  .c-ow b{font-size:12.5px;font-weight:500;color:var(--ink2)}
+  .c-ow span{display:none}
+  .c-ow .st-mini{display:inline-flex;flex:none;margin-top:0}
+  .search{flex-basis:100%}
+  .toolbar__row>select{flex:1 1 0;min-width:0}
+  .toolbar__row>#county{flex-grow:1.35}
+  .toolbar .seg{flex:1 1 100%}
+  .toolbar .seg button{flex:1}
+  .toolbar__row .chips{flex:1 1 100%;min-width:0;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-right:28px;-webkit-mask-image:linear-gradient(90deg,#000 86%,transparent);mask-image:linear-gradient(90deg,#000 86%,transparent)}
+  .toolbar__row .chips::-webkit-scrollbar{display:none}
+  .chip{flex:none}
+  .chips--sep{padding-left:0;border-left:0}
+  .count{width:100%;margin-left:0}
+  .drawer{width:100vw;border-left:0;transform:translateY(104%)}
+  .drawer.is-open{transform:none}
+  .d-head{padding:16px}
+  .d-body{padding:4px 16px 40px}
+  .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .row2{grid-template-columns:1fr}
+  .fr,.how{padding-top:30px}
+  .fr__grid{grid-template-columns:1fr}
+  .flow,.how__grid,.lanes{grid-template-columns:1fr}
+  .foot{padding:22px 16px 36px}
+}
+@media (max-width:420px){
+  .mao__grid,.calc,.fr__form{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .btn{padding:0 12px}
+  .pill{padding:7px 9px;font-size:10.5px}
+}
+@media (max-width:480px){
+  .bn-full{display:none}
+  .bn-short{display:inline}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="gHot" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff4d1a"/><stop offset=".6" stop-color="#ff8a2a"/><stop offset="1" stop-color="#ffc061"/></linearGradient>
+    <linearGradient id="gWarm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffb547"/><stop offset="1" stop-color="#ffd98a"/></linearGradient>
+    <linearGradient id="gCold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5d6c84"/><stop offset="1" stop-color="#93a3ba"/></linearGradient>
+    <filter id="glow" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="2.6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+</svg>
+
+<header class="top">
+  <div class="wrap top__in">
+    <a class="brand" href="#" id="home" aria-label="Deal Radar · Pennsylvania">
+      <span class="brand__mark" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#2fe3c6" stroke-opacity=".55" stroke-width="1.6"/><circle cx="12" cy="12" r="4.5" stroke="#2fe3c6" stroke-opacity=".4" stroke-width="1.6"/><path d="M12 12 L19 7" stroke="#ff8a2a" stroke-width="2" stroke-linecap="round"/><circle cx="16" cy="9.2" r="1.9" fill="#ff5a1f"/></svg>
+      </span>
+      <span class="brand__name">Deal Radar <em><span class="bn-full">· Pennsylvania</span><span class="bn-short">· PA</span></em></span>
+    </a>
+    <nav class="tabs" role="tablist" aria-label="Разделы">
+      <button role="tab" id="t-re" aria-controls="tab-re" aria-selected="true" data-tab="re">Недвижимость</button>
+      <button role="tab" id="t-freight" aria-controls="tab-freight" aria-selected="false" data-tab="freight">Freight</button>
+      <button role="tab" id="t-how" aria-controls="tab-how" aria-selected="false" data-tab="how">Как это работает</button>
+    </nav>
+    <div class="top__right">
+      <span class="pill pill--demo" id="srcPill">Демо-данные</span>
+      <button class="iconbtn" id="soundBtn" type="button" aria-pressed="true" aria-label="Звук кликов" title="Звук кликов">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5v5h3.5L12 19V5L7.5 9.5H4z"/><path class="wave" d="M15.5 9a4 4 0 0 1 0 6"/><path class="wave" d="M18 6.5a7.5 7.5 0 0 1 0 11"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- REAL ESTATE -->
+  <section id="tab-re" role="tabpanel" aria-labelledby="t-re">
+    <div class="wrap hero">
+      <div>
+        <p class="eyebrow">Wholesale · Motivated sellers · PA</p>
+        <h1>Кому звонить первым <span class="grad">и сколько предлагать</span></h1>
+        <p class="lead">Загрузи выгрузку DealMachine или список налоговых должников округа. Радар даст каждому дому балл мотивации 0–100 с объяснением, посчитает MAO и разложит сделки по воронке. Ничего не отправляется само.</p>
+        <div class="kpis">
+          <div class="kpi"><b id="kTotal">0</b><span>объектов в списке</span></div>
+          <div class="kpi kpi--hot"><b id="kHot">0</b><span>горячих · балл 70+</span></div>
+          <div class="kpi"><b id="kBudget">0</b><span>вход для покупателя до $100K</span></div>
+          <div class="kpi"><b id="kFee">$0</b><span>fee в работе: оффер → покупатель</span></div>
+        </div>
+      </div>
+      <div class="radar" id="radar">
+        <svg id="radarSvg" viewBox="0 0 320 320" role="group" aria-label="Радар: чем ближе к центру, тем выше балл мотивации"></svg>
+        <div class="radar__sweep" aria-hidden="true"></div>
+        <div class="radar__legend" aria-hidden="true"><span><i class="dot dot--hot"></i>70+</span><span><i class="dot dot--warm"></i>45–69</span><span><i class="dot dot--cold"></i>до 45</span></div>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="demo-note" id="demoNote">Демо-данные: все адреса, владельцы и суммы вымышлены. Загрузи свой CSV, и радар посчитает твои дома.</div>
+
+      <div class="toolbar glass spot">
+        <div class="toolbar__row">
+          <label class="search">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8a96a8" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+            <input id="q" type="search" placeholder="Адрес, владелец, ZIP" autocomplete="off" aria-label="Поиск">
+          </label>
+          <select id="county" aria-label="Округ"></select>
+          <select id="sort" aria-label="Сортировка">
+            <option value="score">По баллу</option>
+            <option value="mao">По MAO</option>
+            <option value="tax">По долгу</option>
+            <option value="owned">По годам</option>
+          </select>
+          <div class="seg" role="tablist" aria-label="Вид">
+            <button type="button" role="tab" data-view="list" aria-selected="true">Список</button>
+            <button type="button" role="tab" data-view="board" aria-selected="false">Воронка</button>
+          </div>
+        </div>
+        <div class="toolbar__row">
+          <div class="chips" id="tierChips" role="group" aria-label="Температура">
+            <button type="button" class="chip" data-tier="all" aria-pressed="true">Все</button>
+            <button type="button" class="chip chip--hot" data-tier="hot" aria-pressed="false">Горячие 70+</button>
+            <button type="button" class="chip" data-tier="warm" aria-pressed="false">Тёплые 45–69</button>
+            <button type="button" class="chip" data-tier="cold" aria-pressed="false">Холодные</button>
+          </div>
+          <div class="chips chips--sep" id="flagChips" role="group" aria-label="Сигналы">
+            <button type="button" class="chip" data-flag="tax" aria-pressed="false">Tax delinquent</button>
+            <button type="button" class="chip" data-flag="vacant" aria-pressed="false">Vacant</button>
+            <button type="button" class="chip" data-flag="absentee" aria-pressed="false">Absentee</button>
+            <button type="button" class="chip" data-flag="probate" aria-pressed="false">Inherited / probate</button>
+            <button type="button" class="chip" data-flag="equity" aria-pressed="false">Equity 50%+</button>
+            <button type="button" class="chip" data-flag="budget" aria-pressed="false">Вход до $100K</button>
+          </div>
+        </div>
+        <div class="toolbar__row">
+          <label class="btn btn--hot" for="file">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V4M7.5 8.5L12 4l4.5 4.5"/><path d="M4 15v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4"/></svg>
+            Импорт CSV
+          </label>
+          <input type="file" id="file" accept=".csv,.tsv,.txt,text/csv" hidden>
+          <button class="btn" type="button" id="tplBtn">Шаблон CSV</button>
+          <button class="btn" type="button" id="expBtn">Экспорт CSV</button>
+          <button class="btn btn--ghost" type="button" id="demoBtn">Демо-данные</button>
+          <span class="count" id="count"></span>
+        </div>
+      </div>
+
+      <div class="mapping glass" id="mapping" hidden></div>
+
+      <div id="listView">
+        <div class="thead" aria-hidden="true"><span>Балл</span><span>Объект</span><span>Владелец</span><span>Сигналы</span><span style="text-align:right">ARV → MAO</span><span class="h-st">Стадия</span></div>
+        <div class="list" id="list"></div>
+      </div>
+      <div id="boardView" hidden>
+        <div class="board" id="board"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FREIGHT -->
+  <section id="tab-freight" role="tabpanel" aria-labelledby="t-freight" hidden>
+    <div class="wrap fr">
+      <p class="eyebrow">Freight · брокерская маржа</p>
+      <h2>Сколько остаётся брокеру с одного груза</h2>
+      <p class="lead">Ставка шиперу минус ставка перевозчику. Плюс $/миля с порожним пробегом и потолок, который можно дать перевозчику при целевой марже.</p>
+      <div class="fr__grid">
+        <form class="glass spot fr__form" id="frForm" autocomplete="off">
+          <label class="field">Rate to shipper, $<input id="fShip" type="number" inputmode="decimal" min="0" step="10" value="1280"></label>
+          <label class="field">Rate to carrier, $<input id="fCarr" type="number" inputmode="decimal" min="0" step="10" value="1090"></label>
+          <label class="field">Loaded miles<input id="fMi" type="number" inputmode="decimal" min="1" step="1" value="470"></label>
+          <label class="field">Deadhead miles<input id="fDh" type="number" inputmode="decimal" min="0" step="1" value="35"></label>
+          <label class="field full">Целевая маржа брокера: <output id="fTv">15%</output><input id="fT" type="range" min="5" max="30" step="1" value="15"></label>
+        </form>
+        <div class="glass spot fr__out" aria-live="polite">
+          <div class="fr__big"><span>Маржа брокера с груза</span><b id="oMargin">$0</b><em id="oPct">0%</em></div>
+          <div class="split" aria-hidden="true"><i class="c" id="oBarC"></i><i class="m" id="oBarM"></i></div>
+          <div class="split-lg"><span>Перевозчику</span><span>Брокеру</span></div>
+          <div class="tiles">
+            <div><span>Шипер платит, $/миля</span><b id="oShipRpm">—</b></div>
+            <div><span>Перевозчик получает, $/миля</span><b id="oCarrRpm">—</b></div>
+            <div><span>Маржа, $/миля</span><b id="oMRpm">—</b></div>
+            <div><span>Перевозчик с порожним, $/миля</span><b id="oAllRpm">—</b></div>
+          </div>
+          <p class="cap" id="oCap"></p>
+        </div>
+      </div>
+      <h3 style="margin-top:30px">Демо-грузы из Пенсильвании</h3>
+      <div class="lanes" id="lanes"></div>
+      <p class="note">Брокеру нужна FMCSA broker authority (MC number) и залог BMC-84 на $75,000 или траст BMC-85: <a href="https://www.fmcsa.dot.gov/registration/get-mc-number-authority-operate" target="_blank" rel="noopener noreferrer">fmcsa.dot.gov</a>. Ставки в демо ориентировочные.</p>
+    </div>
+  </section>
+
+  <!-- HOW -->
+  <section id="tab-how" role="tabpanel" aria-labelledby="t-how" hidden>
+    <div class="wrap how">
+      <p class="eyebrow">Система · кто что делает</p>
+      <h2>Шесть ролей. Ты одобряешь и звонишь горячим.</h2>
+      <p class="lead">Каждая роль делает одну работу и передаёт результат дальше. Решения о деньгах и подписи всегда остаются за тобой.</p>
+      <ol class="flow">
+        <li class="spot"><span class="flow__n">01</span><h3>Сбор списков</h3><p>DealMachine, налоговые должники и sheriff sale округа сводятся в один список. Обновляется каждую неделю.</p><span class="who who--sys">Система</span></li>
+        <li class="spot"><span class="flow__n">02</span><h3>Skip-tracing</h3><p>Телефоны и почта владельцев. Номера сверяются с National Do Not Call, мёртвые отсеиваются.</p><span class="who who--sys">Система</span></li>
+        <li class="spot"><span class="flow__n">03</span><h3>Скоринг</h3><p>Балл 0–100 по шести сигналам и их совпадению. Под каждым баллом видно, откуда он взялся.</p><span class="who who--sys">Система</span></li>
+        <li class="spot"><span class="flow__n">04</span><h3>Расчёт сделки</h3><p>ARV по продажам соседних домов, ремонт, MAO и стартовый оффер. Цифры перед звонком проверяешь ты.</p><span class="who who--both">Система + ты</span></li>
+        <li class="spot"><span class="flow__n">05</span><h3>Касания</h3><p>Письмо, SMS и звонок по скрипту под ситуацию владельца. Каждое касание уходит только после твоего «ок».</p><span class="who who--you">Ты одобряешь</span></li>
+        <li class="spot"><span class="flow__n">06</span><h3>Покупатели</h3><p>База cash buyers: кто покупал дома за наличные в округе за 12 месяцев. Рассылка сделки, контракт, закрытие через title company.</p><span class="who who--both">Система + ты</span></li>
+      </ol>
+      <div class="you glass"><b>Твоя часть:</b><span>одобрить список</span><span>позвонить горячим</span><span>подписать договор</span><span>встретить покупателя на объекте</span></div>
+      <div class="how__grid">
+        <article class="glass spot">
+          <h3>Закон Пенсильвании: wholesale только с лицензией</h3>
+          <p>С 4 января 2025 действует <b>Act 52 of 2024</b>. Wholesale в PA считается лицензируемой деятельностью.</p>
+          <ul>
+            <li>Нужна лицензия PA (salesperson или broker). Fee за переуступку проходит через брокера.</li>
+            <li>В договоре с продавцом и с покупателем 4 обязательных раскрытия.</li>
+            <li>У продавца и покупателя 30 дней на отмену, деньги возвращаются за 10 рабочих дней.</li>
+            <li>Без лицензии остаётся покупка на себя с переходом титула (flip). Для неё нужен капитал или transactional funding.</li>
+          </ul>
+          <p class="src">Источник: <a href="https://www.parealtors.org/resources/wholesaling-overview/" target="_blank" rel="noopener noreferrer">Pennsylvania Association of Realtors</a>. Перед первым договором покажи его юристу в PA.</p>
+        </article>
+        <article class="glass spot">
+          <h3>Касания без штрафов: TCPA и DNC</h3>
+          <ul>
+            <li>Звонить и писать только по номерам, сверенным с <a href="https://www.donotcall.gov/" target="_blank" rel="noopener noreferrer">National Do Not Call Registry</a> и своим stop-листом.</li>
+            <li>Автодозвон, SMS-робот и ИИ-голос только с предварительного письменного согласия. ИИ-голос по TCPA считается artificial voice: <a href="https://www.fcc.gov/document/fcc-makes-ai-generated-voices-robocalls-illegal" target="_blank" rel="noopener noreferrer">FCC, 2024</a>.</li>
+            <li>Звонки с 8:00 до 21:00 по времени владельца. В каждом SMS есть «Reply STOP».</li>
+            <li>Самый безопасный первый канал — бумажное письмо.</li>
+          </ul>
+        </article>
+        <article class="glass spot">
+          <h3>Демо и боевая версия</h3>
+          <ul>
+            <li>Здесь 25 вымышленных объектов. Все расчёты идут в браузере, данные никуда не уходят.</li>
+            <li>В боевой версии: реальные списки твоего округа, skip-tracing, проверка DNC, история касаний, база cash buyers, доступ с телефона.</li>
+            <li>Формат импорта: выгрузка DealMachine или таблица налоговых должников округа. Кнопка «Шаблон CSV» покажет колонки.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <span>Демо-данные: адреса, владельцы и суммы вымышлены. Это не юридическая и не инвестиционная консультация.</span>
+  <span>Собрано в <a href="https://createparadise.now/" target="_blank" rel="noopener noreferrer">Create Paradise Now</a> · 2026</span>
+</footer>
+
+<div class="backdrop" id="backdrop" hidden></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle" hidden></aside>
+<div class="drop" id="drop" hidden><div>Отпусти CSV, и радар посчитает баллы</div></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(() => {
+  'use strict';
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const toNum = v => { if (v == null || v === '') return NaN; const n = parseFloat(String(v).replace(/[^0-9.\-]/g, '')); return isFinite(n) ? n : NaN; };
+  const money = n => (n == null || !isFinite(n)) ? '—' : (n < 0 ? '−$' : '$') + Math.abs(Math.round(n)).toLocaleString('en-US');
+  const kmoney = n => {
+    if (n == null || !isFinite(n)) return '—';
+    const a = Math.abs(n), s = n < 0 ? '−$' : '$';
+    if (a >= 1e6) return s + (a / 1e6).toFixed(2).replace(/\.?0+$/, '') + 'M';
+    if (a >= 1000) return s + (a / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
+    return s + Math.round(a);
+  };
+  const plural = (n, one, few, many) => { const a = Math.abs(n) % 100, b = a % 10; if (a > 10 && a < 20) return many; if (b > 1 && b < 5) return few; if (b === 1) return one; return many; };
+  const YEAR = new Date().getFullYear();
+  const KEY = 'deal-radar-pa-v1';
+  const DEF = { pct: 70, fee: 8000 };
+  const BUDGET = 100000;
+  const MAX_ROWS = 300;
+
+  const STAGES = [
+    { k: 'new', ru: 'Новые', en: 'New lead' },
+    { k: 'contacted', ru: 'Контакт', en: 'Contacted' },
+    { k: 'offer', ru: 'Оффер', en: 'Offer sent' },
+    { k: 'contract', ru: 'Контракт', en: 'Under contract' },
+    { k: 'buyer', ru: 'Покупатель', en: 'Assigned' },
+    { k: 'closed', ru: 'Закрыто', en: 'Closed' },
+    { k: 'dead', ru: 'Отказ', en: 'Dead' }
+  ];
+  const STAGE = Object.fromEntries(STAGES.map(s => [s.k, s]));
+  const FEE_STAGES = new Set(['offer', 'contract', 'buyer']);
+
+  // Demo data: fictional addresses, owners and amounts.
+  const D = (id, addr, city, county, zip, owner, mail, f, beds, baths, sqft, built, asIs, arv, stage) => ({
+    id, addr, city, county, zip, state: 'PA', owner, mail,
+    absentee: !!f.ab, oos: !!f.oos, vacant: !!f.va, tax: f.tax || 0, taxYears: f.ty || 0,
+    equity: f.eq == null ? null : f.eq, owned: f.yo == null ? null : f.yo, probate: !!f.pr,
+    beds, baths, sqft, built, asIs, arv, stage
+  });
+  const DEMO = [
+    D('d01', '2417 N Wrenfield St', 'Philadelphia', 'Philadelphia', '19132', 'Estate of R. Delgado', 'Philadelphia, PA · адрес юриста', { ab: 1, va: 1, tax: 6840, ty: 3, eq: 100, yo: 38, pr: 1 }, 3, 1, 1080, 1925, 62000, 175000, 'offer'),
+    D('d02', '3158 Copperleaf St', 'Philadelphia', 'Philadelphia', '19134', 'Harlow Holdings LLC', 'Newark, NJ', { ab: 1, oos: 1, va: 1, tax: 3920, ty: 2, eq: 72, yo: 11 }, 2, 1, 980, 1920, 58000, 165000, 'contacted'),
+    D('d03', '4721 Marrowstone St', 'Philadelphia', 'Philadelphia', '19124', 'D. Walsh', '', { tax: 2150, ty: 1, eq: 88, yo: 27 }, 3, 1, 1150, 1928, 89000, 205000, 'new'),
+    D('d04', '5512 Bellweather Ave', 'Philadelphia', 'Philadelphia', '19143', 'Estate of E. Washington', 'Atlanta, GA', { ab: 1, oos: 1, eq: 100, yo: 41, pr: 1 }, 3, 1.5, 1220, 1925, 95000, 215000, 'contract'),
+    D('d05', '1938 S Thistle St', 'Philadelphia', 'Philadelphia', '19146', 'M. Kowalski', 'Scranton, PA', { ab: 1, eq: 64, yo: 19 }, 2, 1, 900, 1915, 140000, 285000, 'dead'),
+    D('d06', '3307 N Hollin St', 'Philadelphia', 'Philadelphia', '19140', 'J. Pham', 'Philadelphia, PA · другой адрес', { ab: 1, va: 1, tax: 4480, ty: 2, eq: 95, yo: 22 }, 3, 1, 1040, 1922, 52000, 158000, 'new'),
+    D('d07', '6114 Larchmere St', 'Philadelphia', 'Philadelphia', '19144', 'S. Rivera', '', { tax: 1300, ty: 1, eq: 46, yo: 8 }, 3, 1.5, 1350, 1930, 160000, 240000, 'new'),
+    D('d08', '2840 N Tamsin St', 'Philadelphia', 'Philadelphia', '19133', 'Estate of G. Russo', 'Cherry Hill, NJ', { ab: 1, oos: 1, va: 1, tax: 9210, ty: 4, eq: 100, yo: 46, pr: 1 }, 3, 1, 1000, 1920, 41000, 150000, 'buyer'),
+    D('d09', '1725 W Ashwick St', 'Philadelphia', 'Philadelphia', '19141', 'W. Jenkins', '', { tax: 3060, ty: 2, eq: 81, yo: 31 }, 3, 1, 1180, 1926, 84000, 190000, 'contacted'),
+    D('d10', '4419 Penhallow St', 'Philadelphia', 'Philadelphia', '19124', 'P. Haddad', 'Orlando, FL', { ab: 1, oos: 1, eq: 58, yo: 14 }, 3, 1, 1100, 1935, 118000, 225000, 'new'),
+    D('d11', '2963 Fernhollow St', 'Philadelphia', 'Philadelphia', '19134', 'A. Kim', 'Philadelphia, PA · другой адрес', { ab: 1, va: 1, eq: 70, yo: 9 }, 2, 1, 960, 1915, 79000, 195000, 'offer'),
+    D('d12', '5847 Wexmoor St', 'Philadelphia', 'Philadelphia', '19142', 'B. Novak', 'Baltimore, MD', { ab: 1, oos: 1, va: 1, tax: 7730, ty: 3, eq: 100, yo: 24 }, 3, 1, 1060, 1925, 46000, 145000, 'closed'),
+    D('d13', '3624 N Kestrelle St', 'Philadelphia', 'Philadelphia', '19140', 'C. Murphy', 'Philadelphia, PA · другой адрес', { ab: 1, eq: 35, yo: 6 }, 3, 1, 1120, 1925, 68000, 170000, 'new'),
+    D('d14', '1012 N Orchardine St', 'Philadelphia', 'Philadelphia', '19104', 'Estate of L. Freeman', '', { tax: 1840, ty: 1, eq: 100, yo: 52, pr: 1 }, 4, 1.5, 1260, 1910, 130000, 260000, 'new'),
+    D('d15', '4256 N Brightmoor St', 'Philadelphia', 'Philadelphia', '19120', 'R. Cohen', 'Allentown, PA', { ab: 1, va: 1, eq: 62, yo: 16 }, 3, 1, 1240, 1928, 98000, 210000, 'contacted'),
+    D('d16', '1418 W Quinlan St', 'Chester', 'Delaware', '19013', 'Estate of H. Bailey', 'Wilmington, DE', { ab: 1, oos: 1, va: 1, tax: 5600, ty: 3, eq: 100, yo: 44, pr: 1 }, 3, 1, 1100, 1920, 38000, 135000, 'new'),
+    D('d17', '220 Pellston Ave', 'Upper Darby', 'Delaware', '19082', 'N. Patel', 'Philadelphia, PA', { ab: 1, eq: 55, yo: 12 }, 3, 1.5, 1300, 1940, 150000, 245000, 'new'),
+    D('d18', '911 Bramwell St', 'Chester', 'Delaware', '19013', 'T. Morales', '', { tax: 2940, ty: 2, eq: 76, yo: 20 }, 3, 1, 1020, 1925, 55000, 140000, 'offer'),
+    D('d19', '731 N Halcyon St', 'Reading', 'Berks', '19604', 'L. Okafor', 'Bronx, NY', { ab: 1, oos: 1, va: 1, tax: 4150, ty: 2, eq: 67, yo: 13 }, 3, 1, 1150, 1915, 48000, 150000, 'contacted'),
+    D('d20', '1520 Elmridge St', 'Reading', 'Berks', '19602', 'K. Brennan', '', { eq: 90, yo: 33 }, 3, 1, 1220, 1920, 72000, 165000, 'new'),
+    D('d21', '418 S Fennick St', 'Reading', 'Berks', '19602', 'Estate of J. Lutz', 'Lancaster, PA', { ab: 1, tax: 1980, ty: 1, eq: 100, yo: 39, pr: 1 }, 3, 1, 1050, 1910, 61000, 155000, 'new'),
+    D('d22', '2207 Sorrelwood St', 'Pittsburgh', 'Allegheny', '15210', 'D. Kovach', 'Columbus, OH', { ab: 1, oos: 1, va: 1, eq: 84, yo: 18 }, 3, 1, 1240, 1925, 54000, 160000, 'new'),
+    D('d23', '615 Cobblefield Ave', 'McKees Rocks', 'Allegheny', '15136', 'G. Brown', '', { tax: 3380, ty: 2, eq: 49, yo: 10 }, 3, 1, 1100, 1930, 63000, 140000, 'new'),
+    D('d24', '87 Arbordale St', 'Wilkes-Barre', 'Luzerne', '18702', 'Estate of F. Mazur', 'Scranton, PA', { ab: 1, va: 1, tax: 6120, ty: 3, eq: 100, yo: 47, pr: 1 }, 4, 1, 1320, 1915, 36000, 132000, 'new'),
+    D('d25', '344 N Tollgate St', 'Hazleton', 'Luzerne', '18201', 'R. Santos', 'Paterson, NJ', { ab: 1, oos: 1, tax: 2460, ty: 2, eq: 60, yo: 9 }, 3, 1, 1180, 1925, 69000, 150000, 'contacted')
+  ];
+
+  // ---------- state ----------
+  const clone = o => JSON.parse(JSON.stringify(o));
+  const fresh = () => ({ v: 1, source: 'demo', file: '', rows: clone(DEMO), over: {}, notes: {}, me: 'Pavel', co: '', contact: '', sound: true });
+  let S = fresh();
+  try {
+    const raw = localStorage.getItem(KEY);
+    if (raw) { const s = JSON.parse(raw); if (s && s.v === 1 && Array.isArray(s.rows)) S = Object.assign(fresh(), s); }
+  } catch (e) { /* storage unavailable */ }
+  let saveT;
+  const save = () => { clearTimeout(saveT); saveT = setTimeout(() => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) { /* quota or private mode */ } }, 150); };
+  const UI = { tab: 're', view: 'list', q: '', county: 'all', tier: 'all', flags: new Set(), sort: 'score', open: null, stab: 'sms' };
+
+  // ---------- sound (528 Hz, very quiet) ----------
+  let ac = null;
+  const tick = (f = 528) => {
+    if (!S.sound) return;
+    try {
+      ac = ac || new (window.AudioContext || window.webkitAudioContext)();
+      const o = ac.createOscillator(), g = ac.createGain(), t = ac.currentTime;
+      o.type = 'sine'; o.frequency.value = f;
+      g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(0.03, t + 0.012); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.11);
+      o.connect(g).connect(ac.destination); o.start(t); o.stop(t + 0.12);
+    } catch (e) { /* audio unavailable */ }
+  };
+
+  // ---------- scoring ----------
+  function score(p) {
+    const r = []; let s = 0, sig = 0;
+    if (isTax(p)) {
+      const pts = (p.tax >= 5000 || p.taxYears >= 2) ? 28 : 22; s += pts; sig++;
+      r.push({ k: 'tax', pts, label: 'Tax delinquent', why: `${p.tax > 0 ? `Долг по налогу на недвижимость ${money(p.tax)}` : 'Владелец в списке налоговых должников (сумма в файле не указана)'}${p.taxYears ? ` за ${p.taxYears} ${plural(p.taxYears, 'год', 'года', 'лет')}` : ''}. Пени растут, впереди tax sale, то есть у владельца есть дедлайн.` });
+    }
+    if (p.vacant) { s += 18; sig++; r.push({ k: 'vacant', pts: 18, label: 'Vacant', why: 'Дом пустует. Владелец платит налоги и страховку и рискует вандализмом, ничего не получая.' }); }
+    if (p.absentee) {
+      const pts = p.oos ? 16 : 12; s += pts; sig++;
+      r.push({ k: 'absentee', pts, label: p.oos ? 'Absentee · out of state' : 'Absentee owner', why: `Владелец живёт не в этом доме${p.mail ? ` (почта: ${p.mail})` : ''}. ${p.oos ? 'Управлять из другого штата тяжело, продать проще.' : 'Дом для него обуза, а не жильё.'}` });
+    }
+    if (p.equity != null && p.equity >= 50) {
+      const pts = p.equity >= 80 ? 16 : 12; s += pts; sig++;
+      r.push({ k: 'equity', pts, label: `High equity · ${Math.round(p.equity)}%`, why: p.equity >= 100 ? 'Ипотеки нет. Владелец может уступить в цене и всё равно остаться в плюсе.' : `Equity ${Math.round(p.equity)}%: скидка не загоняет владельца в минус, торг реален.` });
+    }
+    if (p.owned != null && p.owned >= 10) {
+      const pts = p.owned >= 25 ? 10 : p.owned >= 15 ? 7 : 4; s += pts; sig++;
+      r.push({ k: 'years', pts, label: `Owned ${p.owned} yrs`, why: `Владеет ${p.owned} ${plural(p.owned, 'год', 'года', 'лет')}: дом давно выплачен и обычно требует обновления.` });
+    }
+    if (p.probate) { s += 20; sig++; r.push({ k: 'probate', pts: 20, label: 'Inherited / probate', why: 'Дом в наследстве. Наследники обычно хотят быстро разделить деньги, а не заниматься ремонтом.' }); }
+    if (sig >= 3) {
+      const pts = sig >= 4 ? 12 : 8; s += pts;
+      r.push({ k: 'stack', pts, label: `Stack × ${sig}`, why: `Совпали ${sig} ${plural(sig, 'сигнал', 'сигнала', 'сигналов')} сразу. Такие «стопки» списков отвечают в разы чаще, чем дом с одним признаком.` });
+    }
+    return { score: Math.min(100, s), reasons: r, signals: sig };
+  }
+  const isTax = p => p.tax > 0 || !!p.taxDel;
+  const tierOf = s => s >= 70 ? 'hot' : s >= 45 ? 'warm' : 'cold';
+  const TIER_RU = { hot: 'Горячий', warm: 'Тёплый', cold: 'Холодный' };
+  const estRepairs = p => { const rate = p.vacant ? 45 : (p.owned != null && p.owned >= 25 ? 35 : 28); return Math.round(rate * (p.sqft || 1100) / 500) * 500; };
+  function deal(p) {
+    const o = Object.assign({ pct: DEF.pct, fee: DEF.fee }, S.over[p.id] || {});
+    const arv = isFinite(o.arv) && o.arv > 0 ? o.arv : (p.arv || null);
+    const rep = isFinite(o.repairs) && o.repairs >= 0 ? o.repairs : estRepairs(p);
+    const mao = arv ? Math.round(arv * o.pct / 100 - rep - o.fee) : null;
+    const start = mao != null ? Math.max(0, Math.floor(mao * 0.85 / 500) * 500) : null;
+    const buyerPrice = mao != null ? mao + o.fee : null;
+    const buyerMargin = arv ? Math.round(arv * (1 - o.pct / 100)) : null;
+    return { arv, rep, pct: o.pct, fee: o.fee, mao, start, buyerPrice, buyerMargin, inBudget: buyerPrice != null && buyerPrice > 0 && buyerPrice <= BUDGET };
+  }
+  const enrich = p => { const sc = score(p); return Object.assign({}, p, sc, { tier: tierOf(sc.score), d: deal(p) }); };
+
+  // ---------- filters ----------
+  function filtered() {
+    const q = UI.q.trim().toLowerCase();
+    let rows = S.rows.map(enrich).filter(p => {
+      if (UI.county !== 'all' && (p.county || '—') !== UI.county) return false;
+      if (UI.tier !== 'all' && p.tier !== UI.tier) return false;
+      for (const f of UI.flags) {
+        if (f === 'tax' && !isTax(p)) return false;
+        if (f === 'vacant' && !p.vacant) return false;
+        if (f === 'absentee' && !p.absentee) return false;
+        if (f === 'probate' && !p.probate) return false;
+        if (f === 'equity' && !(p.equity >= 50)) return false;
+        if (f === 'budget' && !p.d.inBudget) return false;
+      }
+      if (q && !`${p.addr} ${p.city} ${p.zip} ${p.owner} ${p.county}`.toLowerCase().includes(q)) return false;
+      return true;
+    });
+    const by = {
+      score: (a, b) => b.score - a.score || (b.d.mao || 0) - (a.d.mao || 0),
+      mao: (a, b) => (b.d.mao ?? -1e12) - (a.d.mao ?? -1e12),
+      tax: (a, b) => (b.tax || 0) - (a.tax || 0) || b.score - a.score,
+      owned: (a, b) => (b.owned || 0) - (a.owned || 0) || b.score - a.score
+    }[UI.sort];
+    return rows.sort(by);
+  }
+
+  // ---------- render helpers ----------
+  const ring = (val, size = 46, stroke = 4.5, big = false) => {
+    const t = tierOf(val), r = (size - stroke) / 2, c = 2 * Math.PI * r, off = c * (1 - val / 100);
+    const grad = t === 'hot' ? 'url(#gHot)' : t === 'warm' ? 'url(#gWarm)' : 'url(#gCold)';
+    return `<span class="ring-s${big ? ' big' : ''}" style="width:${size}px;height:${size}px"><svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" aria-hidden="true"><circle class="bg" cx="${size / 2}" cy="${size / 2}" r="${r}" stroke-width="${stroke}"/><circle class="fg" cx="${size / 2}" cy="${size / 2}" r="${r}" stroke-width="${stroke}" stroke="${grad}" stroke-dasharray="${c.toFixed(2)}" stroke-dashoffset="${off.toFixed(2)}"/></svg><b>${val}</b></span>`;
+  };
+  const SIG_SHORT = { tax: 'Tax', vacant: 'Vacant', absentee: 'Absentee', equity: 'Equity', years: 'Yrs', probate: 'Probate' };
+  const sigChips = (p, max = 6) => p.reasons.filter(r => r.k !== 'stack').slice(0, max).map(r => {
+    let t = SIG_SHORT[r.k];
+    if (r.k === 'tax') t = p.tax > 0 ? `Tax ${kmoney(p.tax)}` : 'Tax delinquent';
+    if (r.k === 'equity') t = `Equity ${Math.round(p.equity)}%`;
+    if (r.k === 'years') t = `${p.owned} yrs`;
+    if (r.k === 'absentee' && p.oos) t = 'Absentee · OOS';
+    return `<span class="sig sig--${r.k}">${esc(t)}</span>`;
+  }).join('') || '<span class="sig">нет сигналов</span>';
+  const stagePill = (k, cls = '') => `<span class="stage st-${esc(k)} ${cls}">${esc((STAGE[k] || STAGE.new).ru)}</span>`;
+  const hash = s => { let h = 2166136261; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; };
+
+  // ---------- KPIs + radar ----------
+  function renderTop(all) {
+    $('#kTotal').textContent = all.length.toLocaleString('ru-RU');
+    $('#kHot').textContent = all.filter(p => p.tier === 'hot').length.toLocaleString('ru-RU');
+    $('#kBudget').textContent = all.filter(p => p.d.inBudget).length.toLocaleString('ru-RU');
+    $('#kFee').textContent = kmoney(all.filter(p => FEE_STAGES.has(p.stage)).reduce((s, p) => s + (p.d.fee || 0), 0));
+    const C = 160, R = 148;
+    let h = '';
+    [1, 0.75, 0.5, 0.25].forEach((k, i) => { h += `<circle cx="${C}" cy="${C}" r="${(R * k).toFixed(1)}" class="ring${i === 0 ? ' ring--outer' : ''}"/>`; });
+    const rr = s => (100 - s) / 100 * R * 0.93 + 9;
+    h += `<circle cx="${C}" cy="${C}" r="${rr(70).toFixed(1)}" class="ring ring--hot"/><circle cx="${C}" cy="${C}" r="${rr(45).toFixed(1)}" class="ring ring--warm"/>`;
+    h += `<line x1="${C - R}" y1="${C}" x2="${C + R}" y2="${C}" class="axis"/><line x1="${C}" y1="${C - R}" x2="${C}" y2="${C + R}" class="axis"/>`;
+    h += `<text x="${C + 5}" y="${(C - rr(70) - 4).toFixed(1)}" class="rlab">70</text><text x="${C + 5}" y="${(C - rr(45) - 4).toFixed(1)}" class="rlab">45</text>`;
+    h += `<circle cx="${C}" cy="${C}" r="6" class="core"/>`;
+    all.slice().sort((a, b) => a.score - b.score).slice(-400).forEach(p => {
+      const a = (hash(String(p.id)) % 3600) / 3600 * Math.PI * 2, r = rr(p.score);
+      const x = (C + Math.cos(a) * r).toFixed(1), y = (C + Math.sin(a) * r).toFixed(1);
+      const sz = p.tier === 'hot' ? 4.6 : p.tier === 'warm' ? 3.8 : 3.1;
+      h += `<g class="blip blip--${p.tier}" data-id="${esc(p.id)}" tabindex="0" role="button" aria-label="${esc(p.addr)}, балл ${p.score}">${p.tier === 'hot' ? `<circle class="p" cx="${x}" cy="${y}" r="${sz}" style="animation-delay:${(hash(String(p.id)) % 2600)}ms"/>` : ''}<circle class="b" cx="${x}" cy="${y}" r="${sz}"${p.tier === 'hot' ? ' filter="url(#glow)"' : ''}/><title>${esc(p.addr)} · балл ${p.score}</title></g>`;
+    });
+    $('#radarSvg').innerHTML = h;
+  }
+
+  function renderCounties() {
+    const sel = $('#county'), cur = UI.county;
+    const counts = {};
+    S.rows.forEach(p => { const c = p.county || '—'; counts[c] = (counts[c] || 0) + 1; });
+    const names = Object.keys(counts).sort((a, b) => counts[b] - counts[a] || a.localeCompare(b));
+    sel.innerHTML = `<option value="all">Все округа · ${S.rows.length}</option>` + names.map(n => `<option value="${esc(n)}">${esc(n === '—' ? 'Без округа' : n + ' County')} · ${counts[n]}</option>`).join('');
+    sel.value = names.includes(cur) ? cur : 'all';
+    UI.county = sel.value;
+  }
+
+  function renderList(rows) {
+    const el = $('#list');
+    if (!rows.length) { el.innerHTML = '<div class="empty">Под эти фильтры ничего не попало. Сними пару фильтров.</div>'; return; }
+    const shown = rows.slice(0, MAX_ROWS);
+    el.innerHTML = shown.map(p => `
+      <button type="button" class="lead-row spot${p.tier === 'hot' ? ' is-hot' : ''}" data-id="${esc(p.id)}" aria-label="${esc(p.addr)}: балл ${p.score}, ${TIER_RU[p.tier]}">
+        <span class="c-sc">${ring(p.score)}</span>
+        <span class="c-ad"><b>${esc(p.addr)}</b><span>${esc([p.city, p.county ? p.county + ' County' : '', p.zip].filter(Boolean).join(' · '))}</span></span>
+        <span class="c-ow"><b>${esc(p.owner || 'Владелец не указан')}</b><span>${esc(p.mail ? 'Почта: ' + p.mail : (p.probate ? 'Почта на этот адрес' : 'Живёт в доме'))}</span>${stagePill(p.stage, 'st-mini')}</span>
+        <span class="c-sg">${sigChips(p)}</span>
+        <span class="c-mo"><span>${p.d.arv ? 'ARV ' + kmoney(p.d.arv) : 'ARV —'}</span><b class="${p.d.mao != null && p.d.mao < 0 ? 'neg' : ''}">${p.d.mao != null ? kmoney(p.d.mao) : '—'}</b><i class="${p.d.inBudget ? '' : 'no'}">${p.d.inBudget ? 'вход до $100K' : (p.d.buyerPrice ? 'вход ' + kmoney(p.d.buyerPrice) : 'нужен ARV')}</i></span>
+        <span class="c-st">${stagePill(p.stage)}</span>
+      </button>`).join('') + (rows.length > MAX_ROWS ? `<div class="more">Показаны ${MAX_ROWS} из ${rows.length.toLocaleString('ru-RU')} по баллу. Уточни фильтр или выгрузи всё через «Экспорт CSV».</div>` : '');
+  }
+
+  function renderBoard(rows) {
+    const el = $('#board');
+    el.innerHTML = STAGES.map((s, si) => {
+      const items = rows.filter(p => (p.stage || 'new') === s.k);
+      const fee = items.reduce((a, p) => a + (p.d.fee || 0), 0);
+      return `<section class="col" data-stage="${s.k}" aria-label="${esc(s.ru)}">
+        <header><b>${esc(s.ru)}</b><span>${esc(s.en)}</span><em>${items.length}</em></header>
+        <div class="col__body">${items.slice(0, 120).map(p => `
+          <article class="card" draggable="true" data-id="${esc(p.id)}" tabindex="0" aria-label="${esc(p.addr)}">
+            <div class="card__top">${ring(p.score, 36, 3.6)}<div><b>${esc(p.addr)}</b><span>${esc(p.city)}${p.county ? ' · ' + esc(p.county) : ''}</span></div></div>
+            <div class="card__chips">${sigChips(p, 3)}</div>
+            <div class="card__foot"><span>MAO <b>${kmoney(p.d.mao)}</b></span><span class="mv"><button type="button" data-mv="-1" aria-label="На стадию назад" ${si === 0 ? 'disabled' : ''}>‹</button><button type="button" data-mv="1" aria-label="На стадию вперёд" ${si === STAGES.length - 1 ? 'disabled' : ''}>›</button></span></div>
+          </article>`).join('')}${items.length > 120 ? `<div class="more">+${items.length - 120}</div>` : ''}</div>
+        <footer>${FEE_STAGES.has(s.k) || s.k === 'closed' ? `Fee: <b>${kmoney(fee)}</b>` : `${items.length} ${plural(items.length, 'объект', 'объекта', 'объектов')}`}</footer>
+      </section>`;
+    }).join('');
+  }
+
+  function render() {
+    const all = S.rows.map(enrich);
+    renderTop(all);
+    const rows = filtered();
+    $('#count').textContent = `${rows.length} из ${S.rows.length}`;
+    if (UI.view === 'list') renderList(rows); else renderBoard(rows);
+    const demo = S.source === 'demo';
+    $('#demoNote').hidden = !demo;
+    const pill = $('#srcPill');
+    pill.className = 'pill ' + (demo ? 'pill--demo' : 'pill--csv');
+    pill.textContent = demo ? 'Демо-данные' : 'Твой CSV';
+    pill.title = demo ? 'Все объекты вымышлены' : (S.file || 'Импорт');
+  }
+
+  // ---------- drawer ----------
+  let lastFocus = null;
+  function openDrawer(id) {
+    const base = S.rows.find(p => String(p.id) === String(id));
+    if (!base) return;
+    UI.open = base.id; lastFocus = document.activeElement;
+    const dr = $('#drawer'), bd = $('#backdrop');
+    dr.innerHTML = drawerHTML(enrich(base));
+    dr.hidden = false; bd.hidden = false;
+    document.body.classList.add('lock');
+    requestAnimationFrame(() => { dr.classList.add('is-open'); bd.classList.add('is-open'); });
+    bindDrawer(base);
+    setTimeout(() => { const x = $('.d-x', dr); if (x) x.focus({ preventScroll: true }); }, 60);
+    tick(660);
+  }
+  function closeDrawer() {
+    const dr = $('#drawer'), bd = $('#backdrop');
+    if (dr.hidden) return;
+    dr.classList.remove('is-open'); bd.classList.remove('is-open');
+    document.body.classList.remove('lock');
+    UI.open = null;
+    setTimeout(() => { dr.hidden = true; bd.hidden = true; dr.innerHTML = ''; }, 420);
+    if (lastFocus && document.contains(lastFocus)) lastFocus.focus({ preventScroll: true });
+  }
+
+  function drawerHTML(p) {
+    const d = p.d;
+    const facts = [
+      ['Владелец', p.owner || '—'], ['Почта владельца', p.mail || 'в этом доме'], ['As-is оценка', money(p.asIs)],
+      ['Спальни · ванные', `${p.beds ?? '—'} · ${p.baths ?? '—'}`], ['Площадь', p.sqft ? p.sqft.toLocaleString('en-US') + ' sq ft' : '—'], ['Построен', p.built || '—'],
+      ['Налоговый долг', p.tax > 0 ? money(p.tax) : (p.taxDel ? 'есть, сумма не указана' : 'нет')], ['Equity', p.equity != null ? Math.round(p.equity) + '%' : '—'], ['Владеет', p.owned != null ? `${p.owned} ${plural(p.owned, 'год', 'года', 'лет')}` : '—']
+    ];
+    return `
+      <div class="d-head">
+        ${ring(p.score, 70, 6, true)}
+        <div style="min-width:0">
+          <h2 id="dTitle">${esc(p.addr)}</h2>
+          <p>${esc([p.city, p.county ? p.county + ' County' : '', p.state, p.zip].filter(Boolean).join(', '))}</p>
+          <p style="margin-top:7px"><span class="tier tier--${p.tier}">${TIER_RU[p.tier]}</span>${S.source === 'demo' ? ' <span class="tier" style="background:rgba(255,181,71,.12);color:#ffd79a">Демо</span>' : ''}</p>
+        </div>
+        <button type="button" class="d-x" aria-label="Закрыть">×</button>
+      </div>
+      <div class="d-body">
+        <section class="d-sec">
+          <h3>Почему балл ${p.score} <small>скоринг мотивации</small></h3>
+          ${p.reasons.length ? `<ul class="why">${p.reasons.map(r => `<li><span class="pts">+${r.pts}</span><span><b>${esc(r.label)}</b><span>${esc(r.why)}</span></span></li>`).join('')}</ul>` : '<p class="why-none">Ни одного сигнала мотивации. Такой дом лучше отложить: владелец, скорее всего, продавать не собирается.</p>'}
+          <div class="facts">${facts.map(([k, v]) => `<div><span>${esc(k)}</span><b>${esc(v)}</b></div>`).join('')}</div>
+        </section>
+        <section class="d-sec">
+          <h3>Сделка · MAO <small>maximum allowable offer</small></h3>
+          <div class="calc">
+            <label class="field">ARV, $ (цена после ремонта)<input id="cArv" type="number" inputmode="decimal" min="0" step="1000" value="${d.arv || ''}" placeholder="например 175000"></label>
+            <label class="field">Ремонт, $<input id="cRep" type="number" inputmode="decimal" min="0" step="500" value="${d.rep}"></label>
+            <label class="field">Assignment fee, $<input id="cFee" type="number" inputmode="decimal" min="0" step="500" value="${d.fee}"></label>
+            <label class="field">Правило: <output id="cPctV">${d.pct}%</output> от ARV<input id="cPct" type="range" min="55" max="80" step="1" value="${d.pct}"></label>
+          </div>
+          <div class="mao" id="maoBox"></div>
+          <p class="hint"><b>Зачем ремонтнику ты:</b> он получает готовую сделку по цене, где после ремонта и расходов у него остаётся маржа. Ему не нужно неделями искать продавцов и обзванивать списки.</p>
+        </section>
+        <section class="d-sec">
+          <h3>Воронка <small>stage</small></h3>
+          <div class="row2">
+            <select id="cStage" aria-label="Стадия">${STAGES.map(s => `<option value="${s.k}"${s.k === (p.stage || 'new') ? ' selected' : ''}>${esc(s.ru)} · ${esc(s.en)}</option>`).join('')}</select>
+            <label class="field" style="margin:0"><textarea id="cNote" rows="3" placeholder="Заметка: что сказал владелец, когда перезвонить">${esc(S.notes[p.id] || '')}</textarea></label>
+          </div>
+        </section>
+        <section class="d-sec">
+          <h3>Скрипт касания <small>только копирование</small></h3>
+          <div class="calc">
+            <label class="field">Подпись<input id="sMe" type="text" maxlength="40" value="${esc(S.me)}"></label>
+            <label class="field">Компания (необязательно)<input id="sCo" type="text" maxlength="60" value="${esc(S.co)}" placeholder="Название компании"></label>
+          </div>
+          <div class="stabs seg" role="tablist" aria-label="Канал">
+            <button type="button" role="tab" data-st="sms" aria-selected="${UI.stab === 'sms'}">SMS</button>
+            <button type="button" role="tab" data-st="letter" aria-selected="${UI.stab === 'letter'}">Письмо</button>
+            <button type="button" role="tab" data-st="call" aria-selected="${UI.stab === 'call'}">Звонок</button>
+          </div>
+          <textarea class="out" id="sOut" readonly aria-label="Текст скрипта"></textarea>
+          <div class="out-meta"><span id="sMeta"></span><button type="button" class="btn btn--sm" id="sCopy">Копировать</button></div>
+          <div class="law"><b>Ничего не отправляется само.</b> Перед отправкой:
+            <ul>
+              <li>номер сверен с National Do Not Call и своим stop-листом;</li>
+              <li>TCPA: автодозвон, SMS-робот и ИИ-голос только с предварительного письменного согласия;</li>
+              <li>звонки с 8:00 до 21:00 по времени владельца, в каждом SMS есть «Reply STOP»;</li>
+              <li>Пенсильвания, Act 52 of 2024: wholesale только с лицензией, в договоре 4 раскрытия и 30 дней на отмену.</li>
+            </ul>
+          </div>
+        </section>
+      </div>`;
+  }
+
+  function maoHTML(d) {
+    if (!d.arv) return '<p class="hint" style="margin:0">Впиши ARV: цену, за которую такие дома продаются после ремонта (по продажам соседних домов за 6 месяцев).</p>';
+    const neg = d.mao < 0;
+    const parts = [
+      ['s-mao', Math.max(0, d.mao), 'MAO продавцу', 'var(--teal)'],
+      ['s-fee', d.fee, 'Твой fee', 'var(--lava)'],
+      ['s-rep', d.rep, 'Ремонт', 'var(--amber)'],
+      ['s-mar', d.buyerMargin, 'Расходы и прибыль покупателя', 'var(--blue)']
+    ];
+    const tot = parts.reduce((a, x) => a + Math.max(0, x[1]), 0) || 1;
+    return `
+      <div class="mao__top">
+        <div><span>MAO · максимум для продавца</span><b class="${neg ? 'neg' : ''}">${money(d.mao)}</b></div>
+        <div style="text-align:right"><span>Вход для покупателя</span><b style="font-size:24px;margin-top:6px" class="${d.inBudget ? 'ok' : ''}">${money(d.buyerPrice)}</b></div>
+      </div>
+      <div class="mao__f">${money(d.arv)} × ${d.pct}% − ${money(d.rep)} ремонт − ${money(d.fee)} fee = ${money(d.mao)}</div>
+      <div class="stack" aria-hidden="true">${parts.map(([c, v]) => `<i class="${c}" style="width:${(Math.max(0, v) / tot * 100).toFixed(2)}%"></i>`).join('')}</div>
+      <div class="stack-lg">${parts.map(([, , l, c]) => `<span style="--c:${c}">${l}</span>`).join('')}</div>
+      <div class="mao__grid">
+        <div><span>Стартовый оффер</span><b>${money(d.start)}</b></div>
+        <div><span>Потолок</span><b>${money(d.mao)}</b></div>
+        <div><span>Твой fee</span><b>${money(d.fee)}</b></div>
+      </div>
+      <p class="hint">${neg ? '<span class="bad">Сделка не сходится:</span> ремонт и fee съедают всю скидку. Снизь fee или пересчитай ремонт.' : (d.inBudget ? '<span class="ok">Попадает в коридор до $100K:</span> такие дома покупатели берут за наличные.' : 'Вход для покупателя выше $100K: аудитория cash buyers здесь уже.')}</p>`;
+  }
+
+  function firstName(owner) {
+    const o = String(owner || '').trim();
+    if (!o || (o === o.toUpperCase() && !/,/.test(o) && /[A-Z]{2,}\s+[A-Z]{2,}/.test(o)) || /^estate of/i.test(o) || /\b(llc|inc|trust|corp|corporation|holdings|properties|ltd|lp|bank|company|co\.)\b/i.test(o)) return '';
+    const parts = o.replace(/,.*/, '').split(/\s+/);
+    if (/,/.test(o)) { const after = o.split(',')[1]; const f = after && after.trim().split(/\s+/)[0]; return f && f.length > 1 && !/\.$/.test(f) ? cap(f) : ''; }
+    const f = parts[0];
+    return f && f.length > 1 && !/\.$/.test(f) ? cap(f) : '';
+  }
+  const cap = s => s.charAt(0).toUpperCase() + s.slice(1).toLowerCase();
+  const angleOf = p => p.probate ? 'probate' : isTax(p) ? 'tax' : p.vacant ? 'vacant' : p.absentee ? 'absentee' : 'generic';
+
+  function script(p, kind) {
+    const d = deal(p);
+    const fn = firstName(p.owner);
+    const hi = fn ? `Hi ${fn}` : 'Hi there';
+    const me = (S.me || '').trim() || 'your local buyer';
+    const co = (S.co || '').trim();
+    const meCo = co ? `${me} with ${co}` : me;
+    const street = p.addr, city = p.city || 'the area';
+    const angle = angleOf(p);
+    if (kind === 'sms') {
+      const t = {
+        probate: `${hi}, this is ${meCo}. I'm sorry for your family's loss. I buy houses as-is for cash and would like to make a fair offer on ${street}. No repairs, no cleanout, and timing that works for the estate. Open to hearing it? Reply STOP to opt out.`,
+        tax: `${hi}, this is ${meCo}. I'd like to buy ${street} as-is for cash. If the property taxes are behind, they can be paid off at closing. Would you be open to an offer? Reply STOP to opt out.`,
+        vacant: `${hi}, ${meCo} here. It looks like ${street} may be sitting empty. I buy houses as-is for cash and close on your timeline, with no repairs and no showings. Worth a quick offer? Reply STOP to opt out.`,
+        absentee: `${hi}, this is ${meCo}. You own ${street} in ${city}. I buy houses there as-is for cash and handle everything locally, so you don't have to travel. Open to an offer? Reply STOP to opt out.`,
+        generic: `${hi}, this is ${meCo}, a local home buyer. Would you consider an as-is cash offer on ${street}? No repairs, no fees, and you pick the closing date. Reply STOP to opt out.`
+      };
+      return t[angle];
+    }
+    if (kind === 'letter') {
+      const date = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+      const to = /^estate of/i.test(p.owner || '') ? `To the family of ${String(p.owner).replace(/^estate of\s*/i, '')}` : (p.owner || 'Property Owner');
+      const sal = /^estate of/i.test(p.owner || '') ? 'Dear family,' : fn ? `Dear ${fn},` : 'Dear Owner,';
+      const para = {
+        probate: 'I understand an inherited house can be a lot to handle on top of everything else. I can buy it as-is, including anything left inside, and work with the estate\'s attorney so the timing works for the family.',
+        tax: 'If the property taxes have fallen behind, a sale can pay them off at closing, before the balance ever reaches a tax sale. I can move quickly when timing matters.',
+        vacant: 'An empty house still costs money every month: taxes, insurance, utilities and the risk of break-ins. I can take it off your hands as-is.',
+        absentee: 'Managing a house from a distance is hard: tenants, repairs, inspections. I can buy it as-is and handle everything locally.',
+        generic: 'If you have thought about selling, I can make a simple, fair offer without the hassle of listing.'
+      }[angle];
+      return `${date}
+
+${to}
+Re: ${street}, ${city}, PA ${p.zip || ''}
+
+${sal}
+
+My name is ${me}${co ? ` of ${co}` : ''}. I buy houses in ${p.county ? p.county + ' County' : 'Pennsylvania'} as-is, for cash, and I am writing about your property at ${street}.
+
+${para}
+
+How it works:
+- No repairs, cleaning or showings. You sell the house exactly as it is.
+- You choose the closing date. A local title company handles the paperwork.
+- No commissions charged to you.
+
+If we agree on terms, the agreement will say plainly how the purchase is structured, including your right to cancel within 30 days where Pennsylvania law requires it. You are always free to consult an appraiser, an independent real estate licensee or an attorney.
+
+If you would like a no-obligation offer, simply reply to this letter.
+
+Sincerely,
+${me}${co ? `\n${co}` : ''}`;
+    }
+    const rng = d.mao != null && d.mao > 0 ? `${kmoney(d.start)} to ${kmoney(d.mao)}` : 'a fair number';
+    const ask = {
+      probate: '"How is the family doing with the house? Is anyone living there now?"',
+      tax: '"Is the tax situation something you want to get resolved soon?"',
+      vacant: '"Has the house been empty for a while? What are your plans for it?"',
+      absentee: '"Is it rented right now, or sitting empty?"',
+      generic: '"Have you thought about selling at some point?"'
+    }[angle];
+    return `OPENER
+"${fn ? `Hi, is this ${fn}? This is ${meCo}.` : `Hi, this is ${meCo}.`} I'm calling about the house at ${street}. Do you have a minute?"
+
+PERMISSION
+"I'm a local buyer. I buy houses as-is for cash. Would you ever consider selling if the price and timing were right?"
+
+DISCOVERY (listen 80% of the time)
+- ${ask}
+- "If you sold, what would you do next?"            (motivation)
+- "How soon would you want this done?"              (timeline)
+- "What condition is it in: roof, heater, plumbing?" (repairs)
+- "Do you have a number in mind?"                    (let them anchor first)
+
+OFFER FRAME
+"Houses like this sell for about ${kmoney(d.arv)} after a full renovation, and buyers work backwards from that. As-is, I could be around ${rng}, and you pick the closing date."
+
+NEXT STEP
+"Can I walk through the property this week to firm up the number?"
+
+BEFORE DIALING
+[ ] number scrubbed against DNC   [ ] 8am-9pm owner's local time   [ ] stop request = log it and never call again`;
+  }
+
+  function bindDrawer(base) {
+    const dr = $('#drawer');
+    const id = base.id;
+    const ov = () => (S.over[id] = S.over[id] || {});
+    const upd = () => {
+      const d = deal(base);
+      $('#maoBox', dr).innerHTML = maoHTML(d);
+      const pct = $('#cPct', dr); pct.style.setProperty('--fill', ((pct.value - 55) / 25 * 100) + '%');
+      $('#cPctV', dr).textContent = pct.value + '%';
+      drawScript();
+    };
+    const drawScript = () => {
+      const txt = script(base, UI.stab);
+      $('#sOut', dr).value = txt;
+      if (UI.stab === 'sms') { const n = txt.length, gsm = /^[\x20-\x7E\n\r]*$/.test(txt); const per = gsm ? 153 : 67; $('#sMeta', dr).textContent = `${n} символов · ${n <= (gsm ? 160 : 70) ? 1 : Math.ceil(n / per)} SMS`; }
+      else $('#sMeta', dr).textContent = UI.stab === 'letter' ? 'Письмо на 1 страницу · печать и отправка почтой' : 'Скрипт звонка · говорит человек, не робот';
+    };
+    $('.d-x', dr).addEventListener('click', closeDrawer);
+    $('#cArv', dr).addEventListener('input', e => { const v = toNum(e.target.value); if (isFinite(v) && v > 0) ov().arv = v; else delete ov().arv; save(); upd(); render(); });
+    $('#cRep', dr).addEventListener('input', e => { const v = toNum(e.target.value); if (isFinite(v) && v >= 0) ov().repairs = v; else delete ov().repairs; save(); upd(); render(); });
+    $('#cFee', dr).addEventListener('input', e => { const v = toNum(e.target.value); ov().fee = isFinite(v) && v >= 0 ? v : DEF.fee; save(); upd(); render(); });
+    $('#cPct', dr).addEventListener('input', e => { ov().pct = +e.target.value; save(); upd(); render(); });
+    $('#cStage', dr).addEventListener('change', e => { base.stage = e.target.value; save(); render(); tick(792); toast(`Стадия: ${STAGE[base.stage].ru}`); });
+    let nt; $('#cNote', dr).addEventListener('input', e => { clearTimeout(nt); nt = setTimeout(() => { S.notes[id] = e.target.value; save(); }, 250); });
+    $('#sMe', dr).addEventListener('input', e => { S.me = e.target.value; save(); drawScript(); });
+    $('#sCo', dr).addEventListener('input', e => { S.co = e.target.value; save(); drawScript(); });
+    $$('[data-st]', dr).forEach(b => b.addEventListener('click', () => {
+      UI.stab = b.dataset.st;
+      $$('[data-st]', dr).forEach(x => x.setAttribute('aria-selected', String(x === b)));
+      drawScript(); tick();
+    }));
+    $('#sCopy', dr).addEventListener('click', () => copy($('#sOut', dr).value));
+    upd();
+  }
+
+  function copy(text) {
+    const done = () => { toast('Скопировано. Отправляешь ты сам, после проверки DNC.'); tick(792); };
+    if (navigator.clipboard && window.isSecureContext) { navigator.clipboard.writeText(text).then(done, () => fallback()); } else fallback();
+    function fallback() {
+      try { const ta = document.createElement('textarea'); ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); done(); }
+      catch (e) { toast('Не получилось скопировать: выдели текст вручную.'); }
+    }
+  }
+
+  let tt;
+  function toast(msg) { const t = $('#toast'); t.textContent = msg; t.classList.add('is-on'); clearTimeout(tt); tt = setTimeout(() => t.classList.remove('is-on'), 2600); }
+
+  // ---------- CSV ----------
+  function parseCSV(text) {
+    text = text.replace(/^﻿/, '');
+    const first = text.split(/\r?\n/, 1)[0] || '';
+    const delim = [',', ';', '\t'].map(d => [d, first.split(d).length]).sort((a, b) => b[1] - a[1])[0][0];
+    const rows = []; let row = [], cell = '', q = false;
+    for (let i = 0; i < text.length; i++) {
+      const c = text[i];
+      if (q) {
+        if (c === '"') { if (text[i + 1] === '"') { cell += '"'; i++; } else q = false; }
+        else cell += c;
+      } else if (c === '"') q = true;
+      else if (c === delim) { row.push(cell); cell = ''; }
+      else if (c === '\n' || c === '\r') { if (c === '\r' && text[i + 1] === '\n') i++; row.push(cell); rows.push(row); row = []; cell = ''; }
+      else cell += c;
+    }
+    if (cell !== '' || row.length) { row.push(cell); rows.push(row); }
+    return rows.filter(r => r.some(x => String(x).trim() !== ''));
+  }
+  const FIELDS = [
+    ['addr', 'адрес', /^(property )?(street )?address( line 1| full| 1| unparsed)?$|^situs( address)?$|^location$|^property location$|^site address$/],
+    ['city', 'город', /^(property )?(address )?city$/],
+    ['state', 'штат', /^(property )?(address )?state$/],
+    ['zip', 'ZIP', /^(property )?(address )?(zip|zip code|zipcode|postal code)$/],
+    ['county', 'округ', /^(property )?(address )?county( name)?$/],
+    ['owner', 'владелец', /^owner( 1)?( full)? name$|^owner$|^owner 1$|^owner name 1$|^ownername$|^owner 1 name$|^owner names?$|^(contact|contact 1|person|full) ?(full )?name$|^name$/],
+    ['ownerFirst', 'имя', /^(owner( 1)? |contact( 1)? )?first ?name$/],
+    ['ownerLast', 'фамилия', /^(owner( 1)? |contact( 1)? )?last ?name$/],
+    ['mailAddr', 'почтовый адрес', /mail(ing)? address|^owner address( full| line 1)?$/],
+    ['mailCity', 'город почты', /mail(ing)? city|^owner (address )?city$/],
+    ['mailState', 'штат почты', /mail(ing)? state|^owner (address )?state$/],
+    ['value', 'оценка', /estimated value|est value|market value|^value$|avm|total assessment|assessed value|assessment|market price/],
+    ['arv', 'ARV', /^arv$|after repair/],
+    ['equityPct', 'equity %', /equity (percent|pct|percentage)|^equity %$|^equity percent$/],
+    ['equityAmt', 'equity $', /^(estimated )?equity( amount)?$/],
+    ['yearsOwned', 'годы владения', /years owned|ownership (length|years)|length of ownership/],
+    ['saleDate', 'дата покупки', /last sale date|sale date|^last sold$|recording date|deed date|sale year/],
+    ['vacant', 'vacant', /vacan/],
+    ['absentee', 'absentee', /absentee|non owner occupied|out of state( owner)?/],
+    ['taxAmt', 'сумма долга', /tax delinquent amount|delinquent amount|amount due|total due|balance due|taxes owed|tax balance|^balance$|^total$|tax due/],
+    ['taxFlag', 'tax delinquent', /^tax delinquent$|^tax default(ed)?$|delinquent tax|^tax lien$|^tax delinquency$/],
+    ['taxYears', 'годы долга', /num years owed|years (delinquent|owed)|tax delinquent year|oldest year owed/],
+    ['probate', 'probate', /probate|inherit|deceased/],
+    ['sqft', 'площадь', /square (feet|footage)|sq ?ft|living area|building size|livable area/],
+    ['beds', 'спальни', /bed/],
+    ['baths', 'ванные', /bath/],
+    ['built', 'год постройки', /year built/]
+  ];
+  const isTrue = v => { const s = String(v == null ? '' : v).trim().toLowerCase(); if (!s) return false; if (/^(y|yes|true|1|x|t|да|✓|vacant|absentee|probate)$/.test(s)) return true; if (/^(n|no|false|0|нет|-|unknown|n\/a|na|none|null|не известно|неизвестно)$/.test(s)) return false; const n = toNum(s); return isFinite(n) ? n > 0 : s.length > 0; };
+
+  function mapRows(rows) {
+    if (rows.length < 2) return { list: [], found: [], missing: [] };
+    const head = rows[0].map(h => String(h).toLowerCase().replace(/[^a-z0-9%]+/g, ' ').trim());
+    const idx = {}, used = new Set();
+    FIELDS.forEach(([k, , re]) => { const i = head.findIndex((h, j) => !used.has(j) && re.test(h)); if (i >= 0) { idx[k] = i; used.add(i); } });
+    const oosHeader = idx.absentee != null && /out of state/.test(head[idx.absentee]);
+    const get = (r, k) => idx[k] != null ? (r[idx[k]] ?? '').trim() : '';
+    const list = [];
+    rows.slice(1).forEach((r, n) => {
+      let addr = get(r, 'addr');
+      if (!addr) return;
+      let city = get(r, 'city'), zip = get(r, 'zip'), st0 = get(r, 'state');
+      if (!city) { const m = addr.match(/^(.+?),\s*([^,]+?),\s*([A-Za-z]{2})\.?(?:\s+(\d{5})(?:-\d{4})?)?\s*$/); if (m) { addr = m[1].trim(); city = m[2].trim(); st0 = st0 || m[3]; zip = zip || m[4] || ''; } }
+      let owner = get(r, 'owner') || [get(r, 'ownerFirst'), get(r, 'ownerLast')].filter(Boolean).join(' ');
+      const state = (st0 || 'PA').toUpperCase();
+      const mailAddr = get(r, 'mailAddr');
+      let mailState = get(r, 'mailState').toUpperCase(), mailCity = get(r, 'mailCity');
+      if (!mailState && mailAddr) { const mm = mailAddr.match(/,\s*([^,]+?),\s*([A-Za-z]{2})\.?\s+\d{5}(?:-\d{4})?\s*$/); if (mm) { mailCity = mailCity || mm[1].trim(); mailState = mm[2].toUpperCase(); } }
+      let absentee = idx.absentee != null ? isTrue(get(r, 'absentee')) : false;
+      let oos = oosHeader ? absentee : false;
+      if (mailState && mailState !== state) { oos = true; absentee = true; }
+      if (idx.absentee == null && mailAddr && addr && mailAddr.toLowerCase().replace(/\W/g, '').indexOf(addr.toLowerCase().replace(/\W/g, '').slice(0, 10)) !== 0) absentee = true;
+      const value = toNum(get(r, 'value'));
+      let equity = toNum(get(r, 'equityPct'));
+      if (!isFinite(equity)) { const amt = toNum(get(r, 'equityAmt')); if (isFinite(amt) && isFinite(value) && value > 0) equity = Math.max(0, Math.min(100, amt / value * 100)); }
+      if (isFinite(equity) && equity > 0 && equity <= 1) equity = equity * 100;
+      let owned = toNum(get(r, 'yearsOwned'));
+      if (!isFinite(owned)) { const m = get(r, 'saleDate').match(/(19|20)\d{2}/); if (m) owned = Math.max(0, YEAR - +m[0]); }
+      let tax = toNum(get(r, 'taxAmt')); if (!isFinite(tax)) tax = 0;
+      let taxYears = toNum(get(r, 'taxYears'));
+      if (isFinite(taxYears) && taxYears > 1900) taxYears = Math.max(1, YEAR - taxYears);
+      if (!isFinite(taxYears)) taxYears = 0;
+      const taxDel = tax > 0 || (idx.taxFlag != null && isTrue(get(r, 'taxFlag')));
+      let county = get(r, 'county').replace(/\s+county$/i, '');
+      if (!county && /^191\d\d/.test(zip) && state === 'PA') county = 'Philadelphia';
+      if (!city && county === 'Philadelphia') city = 'Philadelphia';
+      const probate = (idx.probate != null && isTrue(get(r, 'probate'))) || /^estate of|\bestate\b|\bheirs?\b|deceased/i.test(owner);
+      const arvIn = toNum(get(r, 'arv'));
+      list.push({
+        id: 'c' + (n + 1), addr, city, county, zip, state,
+        owner, mail: absentee ? ([mailCity, mailState].filter(Boolean).join(', ') || mailAddr) : '',
+        absentee, oos, vacant: idx.vacant != null ? isTrue(get(r, 'vacant')) : false, tax, taxDel, taxYears,
+        equity: isFinite(equity) ? Math.round(equity) : null, owned: isFinite(owned) ? Math.round(owned) : null, probate,
+        beds: toNum(get(r, 'beds')) || null, baths: toNum(get(r, 'baths')) || null, sqft: toNum(get(r, 'sqft')) || null, built: toNum(get(r, 'built')) || null,
+        asIs: isFinite(value) ? value : null, arv: isFinite(arvIn) && arvIn > 0 ? arvIn : (isFinite(value) && value > 0 ? Math.round(value * 1.25 / 1000) * 1000 : null), stage: 'new'
+      });
+    });
+    const found = FIELDS.filter(([k]) => idx[k] != null).map(([, l]) => l);
+    const key = ['addr', 'owner', 'value', 'equityPct', 'vacant', 'absentee', 'taxAmt', 'probate', 'saleDate'];
+    const missing = FIELDS.filter(([k]) => key.includes(k) && idx[k] == null && !(k === 'owner' && (idx.ownerFirst != null || idx.ownerLast != null)) && !(k === 'saleDate' && idx.yearsOwned != null) && !(k === 'equityPct' && idx.equityAmt != null) && !(k === 'taxAmt' && idx.taxFlag != null)).map(([, l]) => l);
+    return { list, found, missing, arvGuess: idx.arv == null && idx.value != null };
+  }
+
+  function importText(text, name) {
+    let res;
+    try { res = mapRows(parseCSV(text)); } catch (e) { toast('Не удалось прочитать файл. Нужен CSV с заголовками в первой строке.'); return; }
+    if (!res.list.length) { toast('Не нашёл колонку с адресом. Скачай «Шаблон CSV» и сверь заголовки.'); return; }
+    S.rows = res.list; S.source = 'csv'; S.file = name || 'CSV'; S.over = {}; S.notes = {};
+    UI.county = 'all'; UI.tier = 'all'; UI.flags.clear(); UI.q = ''; $('#q').value = '';
+    $$('#tierChips .chip').forEach(c => c.setAttribute('aria-pressed', String(c.dataset.tier === 'all')));
+    $$('#flagChips .chip').forEach(c => c.setAttribute('aria-pressed', 'false'));
+    save(); renderCounties(); render();
+    const m = $('#mapping');
+    m.innerHTML = `<button type="button" class="mapping__x" aria-label="Скрыть">×</button><b>${esc(S.file)}:</b> загружено ${res.list.length.toLocaleString('ru-RU')} ${plural(res.list.length, 'объект', 'объекта', 'объектов')}, баллы посчитаны.${res.arvGuess ? ' ARV пока равен оценке × 1,25: уточни его в карточке по продажам соседних домов.' : ''}
+      <div class="tags">${res.found.map(f => `<span class="t">✓ ${esc(f)}</span>`).join('')}${res.missing.map(f => `<span class="t t--miss">нет: ${esc(f)}</span>`).join('')}</div>`;
+    m.hidden = false;
+    $('.mapping__x', m).addEventListener('click', () => { m.hidden = true; });
+    toast(`Импорт: ${res.list.length} ${plural(res.list.length, 'объект', 'объекта', 'объектов')}`); tick(792);
+  }
+  function readFile(f) {
+    if (!f) return;
+    if (f.size > 25 * 1024 * 1024) { toast('Файл больше 25 МБ. Раздели выгрузку по округам.'); return; }
+    const fr = new FileReader();
+    fr.onload = () => importText(String(fr.result || ''), f.name);
+    fr.onerror = () => toast('Не удалось открыть файл.');
+    fr.readAsText(f);
+  }
+  const csvCell = v => { const s = String(v == null ? '' : v); return /[",\n\r;]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; };
+  function download(name, text) {
+    const blob = new Blob(['﻿' + text], { type: 'text/csv;charset=utf-8' });
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name;
+    document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 1500);
+  }
+  function exportCSV() {
+    const rows = filtered();
+    const head = ['Score', 'Tier', 'Property Address', 'City', 'County', 'State', 'Zip', 'Owner', 'Owner Mailing', 'Signals', 'Why', 'Tax Owed', 'Equity %', 'Years Owned', 'ARV', 'Repairs', 'Rule %', 'Assignment Fee', 'MAO', 'Opening Offer', 'Buyer Price', 'Stage', 'Note'];
+    const lines = [head.join(',')].concat(rows.map(p => [p.score, p.tier, p.addr, p.city, p.county, p.state, p.zip, p.owner, p.mail, p.reasons.filter(r => r.k !== 'stack').map(r => r.label).join(' | '), p.reasons.map(r => `+${r.pts} ${r.label}`).join('; '), p.tax || (p.taxDel ? 'yes' : ''), p.equity ?? '', p.owned ?? '', p.d.arv ?? '', p.d.rep, p.d.pct, p.d.fee, p.d.mao ?? '', p.d.start ?? '', p.d.buyerPrice ?? '', (STAGE[p.stage] || STAGE.new).en, S.notes[p.id] || ''].map(csvCell).join(',')));
+    download(`deal-radar-${new Date().toISOString().slice(0, 10)}.csv`, lines.join('\r\n'));
+    toast(`Экспорт: ${rows.length} ${plural(rows.length, 'строка', 'строки', 'строк')}`); tick(792);
+  }
+  function templateCSV() {
+    const head = ['Property Address', 'City', 'State', 'Zip', 'County', 'Owner 1 Full Name', 'Owner Mailing Address', 'Owner Mailing City', 'Owner Mailing State', 'Estimated Value', 'Equity Percent', 'Last Sale Date', 'Vacant', 'Tax Delinquent', 'Tax Delinquent Amount', 'Probate', 'Building Square Feet', 'Bedrooms', 'Bathrooms', 'Year Built'];
+    const ex = [
+      ['1200 Example Demo St', 'Philadelphia', 'PA', '19134', 'Philadelphia', 'Sample Owner', '45 Other Demo Rd', 'Newark', 'NJ', '64000', '85', '2004-06-15', 'Yes', 'Yes', '4200', 'No', '1050', '3', '1', '1925'],
+      ['88 Sample Demo Ave', 'Reading', 'PA', '19602', 'Berks', 'Estate of Demo Person', '88 Sample Demo Ave', 'Reading', 'PA', '58000', '100', '1981-03-02', 'No', 'No', '0', 'Yes', '1180', '3', '1', '1915']
+    ];
+    download('deal-radar-template.csv', [head].concat(ex).map(r => r.map(csvCell).join(',')).join('\r\n'));
+    toast('Шаблон скачан. Радар читает и выгрузку DealMachine, и список должников округа'); tick();
+  }
+
+  // ---------- freight ----------
+  const LANES = [
+    { from: 'Philadelphia, PA', to: 'Columbus, OH', mi: 470, dh: 35, eq: 'Dry van', ship: 1280, carr: 1090 },
+    { from: 'Allentown, PA', to: 'Atlanta, GA', mi: 820, dh: 40, eq: 'Reefer', ship: 2350, carr: 2000 },
+    { from: 'Harrisburg, PA', to: 'Chicago, IL', mi: 720, dh: 25, eq: 'Dry van', ship: 1750, carr: 1520 },
+    { from: 'Pittsburgh, PA', to: 'Charlotte, NC', mi: 450, dh: 30, eq: 'Flatbed', ship: 1450, carr: 1230 }
+  ];
+  function freight() {
+    const ship = toNum($('#fShip').value) || 0, carr = toNum($('#fCarr').value) || 0, mi = toNum($('#fMi').value) || 0, dh = toNum($('#fDh').value) || 0, t = +$('#fT').value;
+    const m = ship - carr, pct = ship > 0 ? m / ship * 100 : 0;
+    $('#fTv').textContent = t + '%';
+    $('#fT').style.setProperty('--fill', ((t - 5) / 25 * 100) + '%');
+    const mEl = $('#oMargin'); mEl.textContent = money(m); mEl.classList.toggle('neg', m < 0);
+    $('#oPct').textContent = (ship > 0 ? pct.toFixed(1) : '0') + '%';
+    const cw = ship > 0 ? Math.max(0, Math.min(100, carr / ship * 100)) : 0;
+    $('#oBarC').style.width = cw + '%'; $('#oBarM').style.width = Math.max(0, 100 - cw) + '%';
+    const rpm = v => mi > 0 ? '$' + v.toFixed(2) : '—';
+    $('#oShipRpm').textContent = rpm(ship / mi); $('#oCarrRpm').textContent = rpm(carr / mi); $('#oMRpm').textContent = rpm(m / mi);
+    $('#oAllRpm').textContent = (mi + dh) > 0 ? '$' + (carr / (mi + dh)).toFixed(2) : '—';
+    const maxC = ship * (1 - t / 100);
+    $('#oCap').innerHTML = ship > 0 ? `При марже ${t}% перевозчику можно предложить максимум <b>${money(maxC)}</b>, это $${mi > 0 ? (maxC / mi).toFixed(2) : '—'}/миля. ${carr > maxC ? 'Текущая ставка перевозчику выше потолка: торгуйся или ищи другого перевозчика.' : 'Текущая ставка в пределах цели.'}` : 'Впиши ставку шипера.';
+  }
+  function renderLanes() {
+    $('#lanes').innerHTML = LANES.map((l, i) => `<button type="button" class="lane spot${i === 0 ? ' is-on' : ''}" data-lane="${i}"><b>${esc(l.from)} → ${esc(l.to)}</b><span>${l.mi} mi · ${esc(l.eq)} · демо</span><em>${money(l.ship)} → ${money(l.carr)} · маржа ${money(l.ship - l.carr)}</em></button>`).join('');
+  }
+
+  // ---------- events ----------
+  function setTab(t) {
+    UI.tab = t;
+    $$('.tabs [data-tab]').forEach(b => b.setAttribute('aria-selected', String(b.dataset.tab === t)));
+    ['re', 'freight', 'how'].forEach(k => { $('#tab-' + k).hidden = k !== t; });
+    if (t === 'freight') freight();
+    window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
+    tick();
+  }
+  $$('.tabs [data-tab]').forEach(b => b.addEventListener('click', () => setTab(b.dataset.tab)));
+  $('#home').addEventListener('click', e => { e.preventDefault(); setTab('re'); });
+
+  $('#q').addEventListener('input', e => { UI.q = e.target.value; render(); });
+  $('#county').addEventListener('change', e => { UI.county = e.target.value; render(); tick(); });
+  $('#sort').addEventListener('change', e => { UI.sort = e.target.value; render(); tick(); });
+  $$('.seg [data-view]').forEach(b => b.addEventListener('click', () => {
+    UI.view = b.dataset.view;
+    $$('.seg [data-view]').forEach(x => x.setAttribute('aria-selected', String(x === b)));
+    $('#listView').hidden = UI.view !== 'list'; $('#boardView').hidden = UI.view !== 'board';
+    render(); tick();
+  }));
+  $('#tierChips').addEventListener('click', e => {
+    const b = e.target.closest('.chip'); if (!b) return;
+    UI.tier = b.dataset.tier;
+    $$('#tierChips .chip').forEach(c => c.setAttribute('aria-pressed', String(c === b)));
+    render(); tick();
+  });
+  $('#flagChips').addEventListener('click', e => {
+    const b = e.target.closest('.chip'); if (!b) return;
+    const f = b.dataset.flag, on = !UI.flags.has(f);
+    on ? UI.flags.add(f) : UI.flags.delete(f);
+    b.setAttribute('aria-pressed', String(on));
+    render(); tick(on ? 660 : 528);
+  });
+  $('#list').addEventListener('click', e => { const r = e.target.closest('.lead-row'); if (r) openDrawer(r.dataset.id); });
+  $('#radarSvg').addEventListener('click', e => { const g = e.target.closest('.blip'); if (g) openDrawer(g.dataset.id); });
+  $('#radarSvg').addEventListener('keydown', e => { if ((e.key === 'Enter' || e.key === ' ') && e.target.closest('.blip')) { e.preventDefault(); openDrawer(e.target.closest('.blip').dataset.id); } });
+
+  // board: click, move buttons, drag & drop
+  $('#board').addEventListener('click', e => {
+    const mv = e.target.closest('[data-mv]'), card = e.target.closest('.card');
+    if (!card) return;
+    const p = S.rows.find(x => String(x.id) === card.dataset.id); if (!p) return;
+    if (mv) {
+      const i = STAGES.findIndex(s => s.k === (p.stage || 'new')), j = Math.max(0, Math.min(STAGES.length - 1, i + (+mv.dataset.mv)));
+      if (j !== i) { p.stage = STAGES[j].k; save(); render(); tick(j > i ? 792 : 528); toast(`${p.addr} → ${STAGES[j].ru}`); }
+      return;
+    }
+    openDrawer(p.id);
+  });
+  $('#board').addEventListener('keydown', e => { const card = e.target.closest('.card'); if (card && e.target === card && e.key === 'Enter') openDrawer(card.dataset.id); });
+  let dragId = null;
+  $('#board').addEventListener('dragstart', e => { const c = e.target.closest('.card'); if (!c) return; dragId = c.dataset.id; c.classList.add('is-drag'); try { e.dataTransfer.setData('text/plain', dragId); e.dataTransfer.effectAllowed = 'move'; } catch (err) { /* ignore */ } });
+  $('#board').addEventListener('dragend', e => { const c = e.target.closest('.card'); if (c) c.classList.remove('is-drag'); $$('.col.is-over').forEach(x => x.classList.remove('is-over')); });
+  $('#board').addEventListener('dragover', e => { const col = e.target.closest('.col'); if (!col || !dragId) return; e.preventDefault(); $$('.col.is-over').forEach(x => x !== col && x.classList.remove('is-over')); col.classList.add('is-over'); });
+  $('#board').addEventListener('drop', e => {
+    const col = e.target.closest('.col'); if (!col || !dragId) return; e.preventDefault();
+    const p = S.rows.find(x => String(x.id) === dragId); dragId = null;
+    if (p && p.stage !== col.dataset.stage) { p.stage = col.dataset.stage; save(); render(); tick(792); toast(`${p.addr} → ${STAGE[p.stage].ru}`); } else render();
+  });
+
+  $('#backdrop').addEventListener('click', closeDrawer);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+
+  $('#file').addEventListener('change', e => { readFile(e.target.files && e.target.files[0]); e.target.value = ''; });
+  $('#tplBtn').addEventListener('click', templateCSV);
+  $('#expBtn').addEventListener('click', exportCSV);
+  $('#demoBtn').addEventListener('click', () => {
+    const keep = { me: S.me, co: S.co, contact: S.contact, sound: S.sound };
+    S = Object.assign(fresh(), keep);
+    UI.county = 'all'; $('#mapping').hidden = true;
+    save(); renderCounties(); render(); toast('Вернул демо-данные: 25 вымышленных объектов'); tick();
+  });
+  let dragDepth = 0;
+  const hasFiles = e => e.dataTransfer && Array.from(e.dataTransfer.types || []).includes('Files');
+  window.addEventListener('dragenter', e => { if (!hasFiles(e)) return; dragDepth++; $('#drop').hidden = false; });
+  window.addEventListener('dragleave', e => { if (!hasFiles(e)) return; dragDepth = Math.max(0, dragDepth - 1); if (!dragDepth) $('#drop').hidden = true; });
+  window.addEventListener('dragover', e => { if (hasFiles(e)) e.preventDefault(); });
+  window.addEventListener('drop', e => { if (!hasFiles(e)) return; e.preventDefault(); dragDepth = 0; $('#drop').hidden = true; if (UI.tab !== 're') setTab('re'); readFile(e.dataTransfer.files[0]); });
+
+  ['fShip', 'fCarr', 'fMi', 'fDh', 'fT'].forEach(id => $('#' + id).addEventListener('input', () => { freight(); $$('.lane').forEach(l => l.classList.remove('is-on')); }));
+  $('#frForm').addEventListener('submit', e => e.preventDefault());
+  $('#lanes').addEventListener('click', e => {
+    const b = e.target.closest('.lane'); if (!b) return;
+    const l = LANES[+b.dataset.lane];
+    $('#fShip').value = l.ship; $('#fCarr').value = l.carr; $('#fMi').value = l.mi; $('#fDh').value = l.dh;
+    $$('.lane').forEach(x => x.classList.toggle('is-on', x === b));
+    freight(); tick(660);
+  });
+
+  const sb = $('#soundBtn');
+  sb.setAttribute('aria-pressed', String(!!S.sound));
+  sb.addEventListener('click', () => { S.sound = !S.sound; sb.setAttribute('aria-pressed', String(S.sound)); save(); if (S.sound) tick(660); toast(S.sound ? 'Звук кликов включён' : 'Звук кликов выключен'); });
+
+  // cursor spotlight
+  let raf = 0, last = null;
+  document.addEventListener('pointermove', e => {
+    last = e; if (raf) return;
+    raf = requestAnimationFrame(() => {
+      raf = 0; const el = last.target && last.target.closest ? last.target.closest('.spot') : null; if (!el) return;
+      const r = el.getBoundingClientRect(); el.style.setProperty('--mx', (last.clientX - r.left) + 'px'); el.style.setProperty('--my', (last.clientY - r.top) + 'px');
+    });
+  }, { passive: true });
+
+  // init
+  renderCounties(); render(); renderLanes(); freight();
+})();
+</script>
+</body>
+</html>
